@@ -71,6 +71,20 @@ int main()
     }
 
 
+    // sizeof and size functions
+
+    int arr7[10]={1,2,4};
+    int n = sizeof(arr7)/sizeof(int);
+    int n1 = std::size(arr7);
+    cout<<"sizeof(arr7):"<<n<<endl;
+    cout<<"size(arr7):"<<n1<<endl;
+
+
+    int arr8[]={1,2,3,4};
+     int n2 = sizeof(arr8)/sizeof(int);
+    int n3 = std::size(arr8);
+    cout<<"sizeof(arr7):"<<n2<<endl;
+    cout<<"size(arr7):"<<n3<<endl;
 
     return 0;
 }
