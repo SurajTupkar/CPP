@@ -1,3 +1,15 @@
+/*
+Introduction an array :
+    -> declaration
+    -> initialisation
+    -> indexes
+    -> contiguos memory location
+    -> initialise with 0
+    -> initialise with 1
+    -> arr size 3 but access 5 elements
+
+*/
+
 #include "iostream"
 using namespace std;
 
@@ -36,6 +48,26 @@ int main()
     for(int i=0;i<std::size(arr);i++)
     {
         cout<<arr3[i]<<endl;
+    }
+
+    cout<<endl;
+
+    int arr4[10];
+    cout<<arr4[20]<<endl;
+
+    cout << endl;
+
+    int arr5[3]={1,2,3};
+    for(int i=0;i<4;i++)
+    {
+        cout<<arr5[i]<<endl;
+    }
+
+    cout<<endl;
+    int arr6[10]={1,2,3};
+    for(int i=0;i<std::size(arr6);i++)
+    {
+        cout<<arr6[i]<<endl;
     }
 
 
