@@ -107,15 +107,11 @@ class Student
         this->age = src.age;
     }
 
-
     // Destructor
     ~Student()
     {
         cout<<"Destructor called"<<endl;
     }
-
-   
-
 
 };
 
