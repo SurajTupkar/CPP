@@ -1,6 +1,10 @@
 #include "iostream"
 using namespace std;
 
+/*
+constructor and destructor order of execution
+
+*/
 
 class A{
     public :
