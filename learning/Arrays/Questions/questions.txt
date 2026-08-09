@@ -21,8 +21,14 @@ Questions from lecture :
 1. Sum of all elements
 2. Find key in an array
 3. Reverse an array
+    -> 2 Approaches
+        -> 1. Reverse loop
+        -> 2. Swap
 4. swap alternate
 5. find unique element
+    -> 2 Approaches
+        -> 1. Duplicate element replace as 0
+        -> 2. XOR operator
 6. find duplicate element
 7. Intersection of array (same element from two array)
 8. Pair sum
