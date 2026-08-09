@@ -14,3 +14,17 @@ Level 1 – Basics (Warm-up)
 13. Check whether the array is sorted in ascending order.
 14. Find the maximum and minimum in a single traversal.
 15. Copy one array into another.
+
+
+Questions from lecture :
+
+1. Sum of all elements
+2. Find key in an array
+3. Reverse an array
+4. swap alternate
+5. find unique element
+6. find duplicate element
+7. Intersection of array (same element from two array)
+8. Pair sum
+9. Triplet sum
+10. Sort 0's & 1's
