@@ -144,6 +144,47 @@ int occurence(int arr[], int size,int k)
     return occ;
 }
 
+void secondlarge(int arr[],int size)
+{
+    int max = INT_MIN;
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]>max)
+        {
+            max = arr[i];
+        }
+
+    }
+    cout<<max<<endl;
+    
+
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]==max)
+        {
+            arr[i] = 0;
+        }
+        cout<<arr[i]<<" ";
+    }
+
+    int secmax = INT_MIN;
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]>secmax)
+        {
+            secmax = arr[i];
+        }
+    }
+    cout<<endl;
+    cout<<"secmax:"<<secmax<<endl;
+
+}
+
+void secmax(int arr[],int size)
+{
+    
+}
+
 void printArray(int arr[],int size)
 {
     for(int i=0;i<size;i++)
@@ -172,7 +213,8 @@ int main()
     reverse2(arr,std::size(arr));
     printArray(arr,std::size(arr));
     cout<<endl;
-    cout<<"occurence of given number: "<<occurence(arr1,std::size(arr1),2);
+    cout<<"occurence of given number: "<<occurence(arr1,std::size(arr1),2)<<endl;
+    secondlarge(arr1,std::size(arr1));
 
 
     return 0;
