@@ -144,6 +144,7 @@ int occurence(int arr[], int size,int k)
     return occ;
 }
 
+// approach 1 : brute force
 void secondlarge(int arr[],int size)
 {
     int max = INT_MIN;
@@ -180,9 +181,47 @@ void secondlarge(int arr[],int size)
 
 }
 
-void secmax(int arr[],int size)
+// approach 2 : optimise
+int secmax(int arr[],int size)
 {
-    
+    int first_max = INT_MIN;
+    int sec_max = INT_MIN;
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]>first_max)
+        {
+            sec_max = first_max;
+            first_max = arr[i];
+        }
+        else if(arr[i]>sec_max)
+        {
+            sec_max = arr[i];
+        }
+        
+    }
+    return sec_max;
+}
+
+// second smallest
+
+int secsmall(int arr[],int size)
+{
+    int first_small = INT_MAX;
+    int sec_small = INT_MAX;
+
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]<first_small)
+        {
+            sec_small = first_small;
+            first_small = arr[i];
+        }
+        else if (arr[i] != first_small && arr[i]<sec_small)
+        {
+            sec_small = arr[i];
+        }
+    }
+    return sec_small;
 }
 
 void printArray(int arr[],int size)
@@ -193,11 +232,40 @@ void printArray(int arr[],int size)
     }
 }
 
+
+void min_max(int arr[],int size)
+{
+    int min = INT_MAX;
+    int max = INT_MIN;
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]>max)
+        {
+            max = arr[i];
+        }
+        if(arr[i]<min)
+        {
+            min = arr[i];
+        }
+    }
+    cout<<"min:"<<min<<endl;
+    cout<<"max:"<<max<<endl;
+}
+
+void copy_one_sec(int arr[],int arr1[],int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        arr1[i]=arr[i];
+    }
+}
+
 int main()
 {
 
     int arr[]={1,-9,20,30,3};
     int arr1[]={1,2,3,4,5,6,2,2,2,2};
+    int arr2[] = {5,2,8};
     cout<<"Largest Element in array: "<<largest(arr,std::size(arr))<<endl;
     cout<<"smallest Element in array: "<<smallest(arr,std::size(arr))<<endl;
     cout<<"sum of all elements in array: "<<sum(arr,std::size(arr))<<endl;
@@ -215,6 +283,18 @@ int main()
     cout<<endl;
     cout<<"occurence of given number: "<<occurence(arr1,std::size(arr1),2)<<endl;
     secondlarge(arr1,std::size(arr1));
+    cout<<secmax(arr,std::size(arr));
+    cout<<endl;
+    cout<<"secsmall:"<<secsmall(arr1,std::size(arr1));
+    cout<<endl;
+    int arr4[] = {5,2,8};
+    int arr5[] = {17, -4, 29, 8, 0, 13, -11, 25};
+    int arr6[] = {42, -7, 19, 3, 56, -21, 8};
+    int arr7[] = {0};
+    min_max(arr6,std::size(arr6));
+    copy_one_sec(arr6,arr7,std::size(arr6));
+    printArray(arr7,std::size(arr6));
+
 
 
     return 0;

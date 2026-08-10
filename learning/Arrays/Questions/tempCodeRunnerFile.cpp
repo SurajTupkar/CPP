@@ -1,1 +1,1 @@
-secondlarge(arr1,std::size(arr1));
+arr1
