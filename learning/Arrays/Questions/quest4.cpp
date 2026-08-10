@@ -1,0 +1,179 @@
+#include "iostream"
+using namespace std;
+
+/*
+
+1. Find the largest element in an array.
+2. Find the smallest element in an array.
+3. Calculate the sum of all elements.
+4. Calculate the average of all elements.
+5. Count the number of even and odd elements.
+6. Search for a given element (Linear Search).
+7. Find the index of a given element.
+8. Reverse an array.
+10. Count the occurrences of a given element.
+11. Find the second largest element.
+12. Find the second smallest element.
+13. Check whether the array is sorted in ascending order.
+14. Find the maximum and minimum in a single traversal.
+15. Copy one array into another.
+
+*/
+
+int largest(int arr[],int n)
+{
+    int max = INT_MIN;
+    for(int i=0;i<n;i++)
+    {
+        if(arr[i]>max)
+        {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+
+int smallest(int arr[],int size)
+{
+    int min = INT_MAX;
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]<min)
+        {
+            min = arr[i];
+        }
+    }
+    return min;
+}
+
+int sum(int arr[],int size)
+{
+    int sum = 0;
+    for(int i=0;i<size;i++)
+    {
+        sum+=arr[i];
+    }
+    return sum;
+}
+
+float avgerage(int arr[],int size)
+{
+    float avg = 0.0;
+    int add = sum(arr,size);
+    avg = add / size ;
+    return avg;
+}
+
+void odd_even(int arr[],int size)
+{
+     int odd,even = 0;
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i] % 2 == 0)
+        {
+            even++;
+        }
+        else
+        {
+            odd++;
+        }
+    }
+    cout<<"even: "<<even<<endl;
+    cout<<"odd: "<<odd<<endl;
+}
+
+bool search(int arr[],int size,int k)
+{
+    bool flag = false;
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]==k)
+        {
+            flag = true;
+        }
+    }
+    return flag;
+}
+
+
+
+int index(int arr[],int size,int k)
+{
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]==k)
+        {
+            return i;
+        }
+    }
+    return 0;
+}
+
+// approach 1: brute force or simple
+void reverse1(int arr[],int size)
+{
+    for(int i=size-1;i>=0;i--)
+    {
+        cout<<arr[i]<<" ";
+    }
+}
+
+// approach 2: swapping method
+void reverse2(int arr1[],int size)
+{
+   int start = 0;
+   int end = size - 1;
+   while(start<=end)
+   {
+    swap(arr1[start],arr1[end]);
+    start++;
+    end--;
+   }
+}
+
+int occurence(int arr[], int size,int k)
+{
+    int occ = 0;
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]==k)
+        {
+            occ++;
+        }
+    }
+    return occ;
+}
+
+void printArray(int arr[],int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+}
+
+int main()
+{
+
+    int arr[]={1,-9,20,30,3};
+    int arr1[]={1,2,3,4,5,6,2,2,2,2};
+    cout<<"Largest Element in array: "<<largest(arr,std::size(arr))<<endl;
+    cout<<"smallest Element in array: "<<smallest(arr,std::size(arr))<<endl;
+    cout<<"sum of all elements in array: "<<sum(arr,std::size(arr))<<endl;
+    cout<<"avg of all elements in array: "<<avgerage(arr,std::size(arr))<<endl;
+    odd_even(arr,std::size(arr));
+    cout<<"k is "<<search(arr,std::size(arr),10)<<endl;
+    cout<<"index of k:"<<index(arr,std::size(arr),3)<<endl;
+    reverse1(arr,std::size(arr));
+    cout<<endl;
+    reverse2(arr1,std::size(arr1));
+    printArray(arr1,std::size(arr1));
+    cout<<endl;
+    reverse2(arr,std::size(arr));
+    printArray(arr,std::size(arr));
+    cout<<endl;
+    cout<<"occurence of given number: "<<occurence(arr1,std::size(arr1),2);
+
+
+    return 0;
+}
