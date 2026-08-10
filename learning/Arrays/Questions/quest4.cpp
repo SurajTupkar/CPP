@@ -17,6 +17,7 @@ using namespace std;
 13. Check whether the array is sorted in ascending order.
 14. Find the maximum and minimum in a single traversal.
 15. Copy one array into another.
+16. swap alternate
 
 */
 
@@ -260,6 +261,17 @@ void copy_one_sec(int arr[],int arr1[],int size)
     }
 }
 
+void swap_alternate(int arr[],int size)
+{
+    for(int i=0;i<size;i+=2)
+    {
+        if(i+1<size)
+        {
+            swap(arr[i],arr[i+1]);
+        }
+    }
+}
+
 int main()
 {
 
@@ -294,6 +306,11 @@ int main()
     min_max(arr6,std::size(arr6));
     copy_one_sec(arr6,arr7,std::size(arr6));
     printArray(arr7,std::size(arr6));
+    cout<<endl;
+    cout<<"swap_alternate"<<endl;
+    int arr8[] = {1,2,3,4,5};
+    swap_alternate(arr8,std::size(arr8));
+    printArray(arr8,std::size(arr8));
 
 
 
