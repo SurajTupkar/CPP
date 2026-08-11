@@ -9,6 +9,11 @@ int main()
     //*p = 20;  // Not allowed : pointer can not modify it's value it points to.
     p = &b;     // Allowed : it can point to another address.
 
+    int c = 50;
+    int *q = &c;
+    c = 60;
+    cout<<*q<<endl;
+
 
     return 0;
 }
