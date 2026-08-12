@@ -224,6 +224,27 @@ void copy_one_to_sec(int arr[],int arr1[], int size)
     }
 }
 
+// 16. swap alternate
+
+void swap_alt(int arr[],int size)
+{
+    for(int i=0;i<size;i+=2)
+    {
+        swap(arr[i],arr[i+1]);
+    }
+}
+// 17. find unique element
+
+int unique(int arr[],int size)
+{
+    int ans = 0;
+    for(int i=0;i<size;i++)
+    {
+        ans = ans^arr[i];
+    }
+    return ans;
+}
+
 int main()
 {
     int arr[] = {1,2,5,8,-7,3};
@@ -258,6 +279,15 @@ int main()
 
     copy_one_to_sec(arr2,arr3,std::size(arr2));
     PrintArray(arr3,std::size(arr2));
+    cout<<endl;
+    int arr4[] = {1,2,3,4,5,6};
+    swap_alt(arr4,std::size(arr4));
+    PrintArray(arr4,std::size(arr4));
+    cout<<endl;
+
+    int arr5[] = {1,1,2,2,3,4,3,5,5};
+    cout<<unique(arr5,std::size(arr5))<<endl;
+
 
 
 
