@@ -19,6 +19,7 @@ using namespace std;
 11. Find the second largest element.
 12. Find the second smallest element.
 13. Check whether the array is sorted in ascending order.
+13. Check whether the array is sorted in descending order.
 14. Find the maximum and minimum in a single traversal.
 15. Copy one array into another.
 16. swap alternate
@@ -183,13 +184,43 @@ void sec_min_max_first_min_max(int arr[],int size)
     cout<<"second_min:"<<sec_min<<endl;
 }
 
+// 14. Find the maximum and minimum in a single traversal.
 
+void min_max(int arr[],int size)
+{
+    int min = INT_MAX;
+    int max = INT_MIN;
+
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]>max)
+        {
+            max = arr[i];
+        }
+        if(arr[i]<min)
+        {
+            min = arr[i];
+        }
+    }
+    cout<<"maximum : "<<max<<endl;
+    cout<<"minumum : "<<min<<endl;
+}
 
 void PrintArray(int arr[],int size)
 {
     for(int i=0;i<size;i++)
     {
         cout<<arr[i]<<" ";
+    }
+}
+
+// 15. Copy one array into another.
+
+void copy_one_to_sec(int arr[],int arr1[], int size)
+{
+    for(int i=0; i<size; i++)
+    {
+        arr1[i] = arr[i];
     }
 }
 
@@ -220,6 +251,14 @@ int main()
     cout<<"occurence of 5 in an array:"<<occurence(arr,std::size(arr),5)<<endl;
     int arr1[] = {1,6,9,8,-2};
     sec_min_max_first_min_max(arr1,std::size(arr1));
+    min_max(arr1,std::size(arr1));
+
+    int arr2[] = {1,2,3,4};
+    int arr3[std::size(arr2)];
+
+    copy_one_to_sec(arr2,arr3,std::size(arr2));
+    PrintArray(arr3,std::size(arr2));
+
 
 
 
