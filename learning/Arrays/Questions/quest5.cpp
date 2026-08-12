@@ -130,6 +130,19 @@ void reverse_3(int arr[],int size)
     }
 }
 
+int occurence(int arr[], int size,int key)
+{
+    int occ = 0;
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]==key)
+        {
+            occ++;
+        }
+    }
+    return occ;
+}
+
 void PrintArray(int arr[],int size)
 {
     for(int i=0;i<size;i++)
@@ -161,6 +174,8 @@ int main()
     cout<<endl;
     reverse_3(arr,std::size(arr));
     PrintArray(arr,std::size(arr));
+    cout<<endl;
+    cout<<"occurence of 5 in an array:"<<occurence(arr,std::size(arr),5)<<endl;
 
 
 
