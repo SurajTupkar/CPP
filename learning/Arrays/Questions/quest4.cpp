@@ -18,6 +18,7 @@ using namespace std;
 14. Find the maximum and minimum in a single traversal.
 15. Copy one array into another.
 16. swap alternate
+17. find unique element
 
 */
 
@@ -272,6 +273,30 @@ void swap_alternate(int arr[],int size)
     }
 }
 
+void duplicate(int arr[],int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        for(int j=i+1;j<size;j++)
+        {
+            if(arr[i] == arr[j])
+            {
+                cout<<arr[i]<<endl;
+            }
+        }
+    }
+}
+
+int find_unique(int arr[],int size)
+{
+    int ans = 0;
+    for(int i=0;i<size;i++)
+    {
+        ans = ans^arr[i];
+    }
+    return ans;
+}
+
 int main()
 {
 
@@ -311,6 +336,15 @@ int main()
     int arr8[] = {1,2,3,4,5};
     swap_alternate(arr8,std::size(arr8));
     printArray(arr8,std::size(arr8));
+    cout<<endl;
+
+    int arr9[] = {1,3,1,3,4};
+    cout<<find_unique(arr9,std::size(arr9))<<endl;
+
+    int arr10[] = {1,2,3,1,2,2};
+    duplicate(arr10,std::size(arr10));
+
+
 
 
 
