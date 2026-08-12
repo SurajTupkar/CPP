@@ -143,6 +143,48 @@ int occurence(int arr[], int size,int key)
     return occ;
 }
 
+// 11. Find the second largest element.
+// 12. Find the second smallest element.
+
+void sec_min_max_first_min_max(int arr[],int size)
+{
+    int first_max = INT_MIN;
+    int sec_max = INT_MIN;
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]>first_max)
+        {
+            sec_max = first_max;
+            first_max = arr[i];
+        }
+        else if(arr[i]>sec_max)
+        {
+            sec_max = arr[i];
+        }
+    }
+
+    int first_min = INT_MAX;
+    int sec_min = INT_MAX;
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]<first_min)
+        {
+            sec_min= first_min;
+            first_min = arr[i];
+        }
+        else if(arr[i] < sec_min)
+        {
+            sec_min = arr[i];
+        }
+    }
+    cout<<"first_max:"<<first_max<<endl;
+    cout<<"second_max:"<<sec_max<<endl;
+    cout<<"first_min:"<<first_min<<endl;
+    cout<<"second_min:"<<sec_min<<endl;
+}
+
+
+
 void PrintArray(int arr[],int size)
 {
     for(int i=0;i<size;i++)
@@ -176,6 +218,8 @@ int main()
     PrintArray(arr,std::size(arr));
     cout<<endl;
     cout<<"occurence of 5 in an array:"<<occurence(arr,std::size(arr),5)<<endl;
+    int arr1[] = {1,6,9,8,-2};
+    sec_min_max_first_min_max(arr1,std::size(arr1));
 
 
 
