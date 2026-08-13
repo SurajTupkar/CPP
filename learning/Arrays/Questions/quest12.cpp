@@ -3,15 +3,18 @@ using namespace std;
 
 // 1. Find the largest element in an array.
 // 2. Find the smallest element in an array.
+// 3. Calculate the sum of all elements.
+// 4. Calculate the average of all elements.
 
-
-void min_max(int arr[], int size)
+void min_max_sum_avg(int arr[], int size)
 {
     int min = INT_MAX;
     int max = INT_MIN;
+    int sum = 0;
 
     for(int i=0;i<size;i++)
     {
+        sum+=arr[i];
         if(arr[i]>max)
         {
             max = arr[i];
@@ -21,8 +24,10 @@ void min_max(int arr[], int size)
             min = arr[i];
         }
     }
-    cout<<max<<endl;
-    cout<<min<<endl;
+    cout<<"max_number: "<<max<<endl;
+    cout<<"min_number: "<<min<<endl;
+    cout<<"sum: "<<sum<<endl;
+    cout<<"avg: "<<sum/size<<endl;
 
 }
 
@@ -31,7 +36,7 @@ void min_max(int arr[], int size)
 int main()
 {
     int arr[] = {1,2,3,4,55};
-    min_max(arr,std::size(arr));
+    min_max_sum_avg(arr,std::size(arr));
 
 
 
