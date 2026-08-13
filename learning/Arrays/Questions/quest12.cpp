@@ -48,24 +48,30 @@ void min_max_sum_avg_even_odd(int arr[], int size)
 
 // 6. Search for a given element (Linear Search).
 // 7. Find the index of a given element.
-// 8. Reverse an array.
+// 10. Count the occurrences of a given element.
+
 
 bool search(int arr[], int size, int key)
 {
     bool flag = false;
     int index = -1;
+    int count = 0;
     for(int i=0;i<size;i++)
     {
         if(arr[i]==key)
         {
             index = i;
+            count++;
             flag = true;
         }
     }
     cout<<"index:"<<index<<endl;
+    cout<<"count of occurence of given number: "<<count<<endl;
     return flag;
 
 }
+
+// 8. Reverse an array.
 
 void reverse1(int arr[],int size)
 {
@@ -87,6 +93,33 @@ void reverse2(int arr[],int size)
     }
 }
 
+
+// 11. Find the second largest element.
+// 12. Find the second smallest element.
+
+// if array is sorted in ascending order then only need if condition needed
+// if array is not sorted in else if condition is also required.
+
+void sec_min_max(int arr[], int size)
+{
+    int first_max = INT_MIN;
+    int sec_max = INT_MIN;
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]>first_max)
+        {
+            sec_max = first_max;
+            first_max = arr[i];
+        }
+        else if(arr[i]>sec_max)
+        {
+            sec_max = arr[i];
+        }
+    }
+    cout<<"second max: "<<sec_max<<endl;
+    cout<<"first max: "<<first_max<<endl;
+}
+
 void printArray(int arr[],int size)
 {
     for(int i=0;i<size;i++)
@@ -97,7 +130,7 @@ void printArray(int arr[],int size)
 
 int main()
 {
-    int arr[] = {1,2,3,4,55};
+    int arr[] = {1,2,3,4,5};
     min_max_sum_avg_even_odd(arr,std::size(arr));
     bool check = search(arr,std::size(arr),55);
     if(check)
@@ -115,6 +148,8 @@ int main()
     reverse2(arr,std::size(arr));
     printArray(arr,std::size(arr));
     cout<<endl;
+    int arr1[] = {5,4,3,2,1}; 
+    sec_min_max(arr1,std::size(arr1));
 
 
 

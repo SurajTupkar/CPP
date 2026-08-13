@@ -1,1 +1,1 @@
-arr1
+arr[i]>first_max
