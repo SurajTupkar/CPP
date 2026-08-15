@@ -30,9 +30,11 @@ class truck : public car
 int main()
 {
 
-    truck t;
-    t.brand="BMW";
-    cout<<t.brand<<endl;
+    truck *t =new truck() ; 
+    t->brand="BMW";
+    t->doors = 4;
+    cout<<t->brand<<endl;
+    cout<<t->doors<<endl;
 
     
 
