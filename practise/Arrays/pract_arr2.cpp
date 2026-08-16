@@ -181,6 +181,134 @@ void sec_min_sec_max(int arr[], int size)
     cout<<"second_min:"<<sec_min<<endl;
 }
 
+// 13. Check whether the array is sorted in ascending order.
+
+bool check(int arr[],int size)
+{
+    for(int i=0;i<size-1;i++)
+    {
+        if(arr[i]>arr[i+1])
+        {
+           return false;
+        }
+    }
+    return true;
+    
+}
+
+// 15. Copy one array into another.
+
+void copy_from_one_another(int arr[],int arr1[],int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        arr1[i] = arr[i];
+    }
+}
+
+/*
+4. swap alternate
+
+*/
+
+void swap_alt(int arr[],int size)
+{
+    for(int i=0;i<size-1;i+=2)
+    {
+        swap(arr[i],arr[i+1]);
+    }
+}
+
+
+/*
+5. find unique element
+    -> 2 Approaches
+        -> 1. Duplicate element replace as 0 
+            -> it will work when array contains duplicate elements which repeat only 2 times         
+        -> 2. XOR operator
+            -> it will work when array contains same element multiple time not necessary it will repeat 2 times
+
+*/
+
+void unique_1(int arr[],int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        for(int j=i+1;j<size;j++)
+        {
+            if(arr[i]==arr[j])
+            {
+                arr[i] = 0;
+                arr[j] = 0;
+            }
+        }
+    }
+
+}
+
+void printArray_unique_element(int arr[], int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]!=0)
+        {
+            cout<<arr[i]<<" ";
+        }
+    }
+}
+
+void unique_2(int arr[], int size)
+{
+    int ans = 0;
+    for(int i=0;i<size;i++)
+    {
+        ans = ans^arr[i];
+    }
+    cout<<"unique_element:"<<ans<<endl;
+}
+
+
+// 6. find duplicate element
+
+void duplicate(int arr[], int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        for(int j=i+1;j<size;j++)
+        {
+            if(arr[i]==arr[j])
+            {
+                cout<<arr[i]<<" ";
+            }
+        }
+    }
+}
+
+
+// 7. Intersection of array (same element from two array)
+
+void intersection(int arr[], int arr1[],int size1,int size2)
+{
+    for(int i=0;i<size1;i++)
+    {
+        for(int j=0;j<size2;j++)
+        {
+            if(arr[i]==arr1[j])
+            {
+                cout<<arr[i]<<" ";
+                break;
+            }
+        }
+    }
+
+}
+
+/*
+8. Pair sum
+9. Triplet sum
+10. Sort 0's & 1's
+*/
+
 int main()
 {
     int arr[] = {1,2,3,4,5};
@@ -192,6 +320,42 @@ int main()
     printArray(arr,std::size(arr));
     cout<<endl;
     sec_min_sec_max(arr,std::size(arr));
+    int arr1[]= {2,-1,3,1};
+    int arr2[std::size(arr1)];
+    bool flag =check(arr1,std::size(arr1));
+    if(flag)
+    {
+        cout<<"Array is sorted in ascending order"<<endl;
+    }
+    else
+    {
+    cout << "Array is not sorted in ascending order" << endl;
+    }
+
+    copy_from_one_another(arr1,arr2,std::size(arr));
+    printArray(arr2,std::size(arr1));
+    cout<<endl;
+    int arr3[] = {1,2,3,4,5,6};
+    swap_alt(arr3,std::size(arr3));
+    printArray(arr3,std::size(arr3));
+    cout<<endl;
+
+    int arr4[] = {1,2,3,2,3};
+    unique_1(arr4,std::size(arr4));
+    printArray_unique_element(arr4,std::size(arr4));
+    cout<<endl;
+    unique_2(arr4,std::size(arr4));
+    int arr5[] = {1,2,2,3,3};
+    duplicate(arr5,std::size(arr5));
+
+    int arr6[] = {1,2,3,4};
+    int arr7[] ={1,2};
+
+    cout<<endl;
+    intersection(arr6,arr7,std::size(arr6),std::size(arr7));
+
+
+
 
 
 
