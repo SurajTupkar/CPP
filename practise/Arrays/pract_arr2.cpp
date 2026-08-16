@@ -49,6 +49,7 @@ using namespace std;
 3. Calculate the sum of all elements.
 4. Calculate the average of all elements.
 5. Count the number of even and odd elements.
+14. Find the maximum and minimum in a single traversal.
 */
 
 void min_max_sum_avg_even_odd(int arr[], int size)
@@ -139,6 +140,47 @@ void printArray(int arr[], int size)
     }
 }
 
+/*
+11. Find the second largest element.
+12. Find the second smallest element.
+*/
+
+void sec_min_sec_max(int arr[], int size)
+{
+    int first_max = INT_MIN;
+    int sec_max = INT_MIN;
+    int first_min = INT_MAX;
+    int sec_min = INT_MAX;
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]>first_max)
+        {
+            sec_max = first_max;
+            first_max = arr[i];
+        }
+        else if(arr[i]>sec_max)
+        {
+            sec_max = arr[i];
+        }
+
+        if(arr[i]<first_min)
+        {
+            sec_min = first_min;
+            first_min= arr[i];
+        }
+        else if(arr[i]<sec_min)
+        {
+            sec_min = arr[i];
+        }
+
+        
+    }
+    cout<<"first_max:"<<first_max<<endl;
+    cout<<"second_max:"<<sec_max<<endl;
+    cout<<"first_min:"<<first_min<<endl;
+    cout<<"second_min:"<<sec_min<<endl;
+}
+
 int main()
 {
     int arr[] = {1,2,3,4,5};
@@ -148,6 +190,8 @@ int main()
     reverse2(arr,std::size(arr));
     cout<<endl;
     printArray(arr,std::size(arr));
+    cout<<endl;
+    sec_min_sec_max(arr,std::size(arr));
 
 
 
