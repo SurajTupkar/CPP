@@ -306,8 +306,52 @@ void intersection(int arr[], int arr1[],int size1,int size2)
 /*
 8. Pair sum
 9. Triplet sum
-10. Sort 0's & 1's
 */
+
+void pair_triplet(int arr[], int size,int target)
+{
+    for(int i=0;i<size;i++)
+    {
+        for(int j=i+1;j<size;j++)
+        {
+            if(arr[i]+arr[j]==target)
+            {
+                cout<<"pair sum of "<<arr[i]<<" and "<<arr[j]<<" is "<<target<<endl;
+            }
+            for(int k = j+1;k<size;k++)
+            {
+                if(arr[i]+arr[j]+arr[k]==target)
+                {
+                    cout<<"triplet sum of "<<arr[i]<<","<<arr[j]<<" and "<<arr[k]<<" is "<<target<<endl;
+                }
+            }
+        }
+    }
+
+}
+
+// 10. Sort 0's & 1's
+
+void sort_1_0(int arr[],int size)
+{
+    int start = 0;
+    int end =size-1;
+    while(start<end)
+    {
+        if(arr[start]==0)
+        {
+            start++;
+        }
+        else if(arr[end]==1)
+        {
+            end--;
+        }
+        else
+        {
+            swap(arr[start],arr[end]);
+        }
+    }
+}
 
 int main()
 {
@@ -353,6 +397,11 @@ int main()
 
     cout<<endl;
     intersection(arr6,arr7,std::size(arr6),std::size(arr7));
+    cout<<endl;
+    pair_triplet(arr6,std::size(arr6),6);
+    int arr8[] = {1,0,1,0,1};
+    sort_1_0(arr8,std::size(arr8));
+    printArray(arr8,std::size(arr8));
 
 
 
