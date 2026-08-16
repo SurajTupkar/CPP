@@ -86,10 +86,68 @@ void min_max_sum_avg_even_odd(int arr[], int size)
     cout<<"avg:"<<sum/size<<endl;
 }
 
+/*
+6. Search for a given element (Linear Search).
+7. Find the index of a given element.
+10. Count the occurrences of a given element.
+*/
+
+void search(int arr[],int size,int key)
+{
+    int occ = 0;
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]==key)
+        {
+            occ++;
+            cout<<"index:"<<i<<endl;
+            cout<<"present"<<endl;
+        }
+    }cout<<"occurence of given element:"<<occ<<endl;
+}
+
+/*
+8. Reverse an array.
+9. Print an array in reverse order (without modifying it).
+*/
+
+void reverse1(int arr[], int size)
+{
+    for(int i=size-1;i>=0;i--)
+    {
+        cout<<arr[i]<<" ";
+    }
+}
+
+void reverse2(int arr[],int size)
+{
+    int start = 0;
+    int end = size-1;
+    while(start<end)
+    {
+        swap(arr[start],arr[end]);
+        start++;
+        end--;
+    }
+}
+
+void printArray(int arr[], int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+}
+
 int main()
 {
     int arr[] = {1,2,3,4,5};
     min_max_sum_avg_even_odd(arr,std::size(arr));
+    search(arr,std::size(arr),5);
+    reverse1(arr,std::size(arr));
+    reverse2(arr,std::size(arr));
+    cout<<endl;
+    printArray(arr,std::size(arr));
 
 
 
