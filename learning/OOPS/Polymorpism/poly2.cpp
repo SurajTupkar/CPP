@@ -37,6 +37,11 @@ class Add
         return a+b;
     }
 
+    double add (double a, double b, double c)
+    {
+        return a+b+c;
+    }
+
 
 
 };
@@ -47,6 +52,8 @@ int main()
     Add obj;
     cout<<obj.add(10,20)<<endl;
     cout<<obj.add(19.21,20.21)<<endl;
+    cout<<obj.add(10,20,30)<<endl;
+    cout<<obj.add(12.32,14.11,33.22)<<endl;
 
 
     return 0;
