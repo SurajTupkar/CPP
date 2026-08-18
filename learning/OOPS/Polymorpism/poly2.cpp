@@ -1,5 +1,6 @@
 /*
 Polymorphism
+
     -> types 2
         -> 1. compile type polymorphism / static polymorphism
             -> Achieve using 
@@ -11,7 +12,7 @@ Polymorphism
 
 
 1. Function overloading 
-    -> A class contains multiple similar name function but different type of arguments or different no. of arguments
+    -> A class contains multiple similar name function but different type of arguments or difference in no. of arguments
 
 */
 
