@@ -97,8 +97,8 @@ void reverse2(int arr[],int size)
 // 11. Find the second largest element.
 // 12. Find the second smallest element.
 
-// if array is sorted in ascending order then only need if condition needed
-// if array is not sorted in else if condition is also required.
+// if array is sorted in ascending order then only need if condition 
+// if array is not sorted or descending order then else if condition is also required.
 
 void sec_min_max(int arr[], int size)
 {
