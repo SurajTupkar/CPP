@@ -38,9 +38,37 @@ Polymorphism
 #include "iostream"
 using namespace std;
 
+class Vehicle
+{
+    public:
+
+    void service(int km)
+    {
+        if(km>500)
+        {
+            cout<<"Doing Regular Servicing after "<<km<<" kilometer"<<endl;
+        }
+    }
+
+    void service(int km, int months)
+    {
+        if(km == 1000 & months == 3)
+        {
+            cout<<"Doing Detailed Servicing once kilometer is 1000 and months 3"<<endl;
+        }
+    }
+
+
+};
 
 int main()
 {
+    //  Function overloading
+    Vehicle *ptr = new Vehicle();
+    ptr->service(700);
+    ptr->service(1000,3);
+
+    delete ptr;
 
 
 
