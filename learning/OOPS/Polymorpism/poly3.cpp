@@ -20,7 +20,7 @@ class Vehicle
 class Car:public Vehicle
 {
     public:
-    void start()
+    void start() override
     {
         cout<<"car start"<<endl;
     }
@@ -30,7 +30,7 @@ class Car:public Vehicle
 class Bus:public Vehicle
 {
     public:
-    void start()
+    void start() override
     {
         cout<<"Bus start"<<endl;
     }
