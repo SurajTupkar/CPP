@@ -41,7 +41,6 @@ using namespace std;
 class Vehicle
 {
     public:
-
     void service(int km)
     {
         if(km>500)
@@ -50,12 +49,22 @@ class Vehicle
         }
     }
 
+    void service(double km)
+    {
+        cout<<"Doing servicing after "<<km<<" kilometer"<<endl;
+    }
+
     void service(int km, int months)
     {
-        if(km == 1000 & months == 3)
+        if(km == 1000 && months == 3)
         {
             cout<<"Doing Detailed Servicing once kilometer is 1000 and months 3"<<endl;
         }
+    }
+
+    void service(int months, int km)
+    {
+        cout<<"Doing servicing depends on months/days and km"<<endl;
     }
 
 
@@ -66,7 +75,9 @@ int main()
     //  Function overloading
     Vehicle *ptr = new Vehicle();
     ptr->service(700);
+    ptr->service(400.32);
     ptr->service(1000,3);
+    ptr->service(2,4000);
 
     delete ptr;
 
