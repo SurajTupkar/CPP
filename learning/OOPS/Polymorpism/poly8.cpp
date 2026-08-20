@@ -11,7 +11,7 @@ Function Overriding
 class vehicle
 {
     public:
-    virtual void start()
+     void start()
     {
         cout<<"vehicle is starting"<<endl;
     }
@@ -22,7 +22,7 @@ class vehicle
 class car : public vehicle
 {
     public:
-    void start() override
+    void start() 
     {
         cout<<"car is starting"<<endl;
     }
@@ -45,8 +45,12 @@ int main()
     */
 
     // After virtual function
-    vehicle *p = new car();
+    vehicle *p = new car();  
     p->start(); // object car -> method car : car is starting
+
+    car *q = new car();
+    vehicle *ptr = static_cast<car*>(q);
+    q->start();
 
 
 
