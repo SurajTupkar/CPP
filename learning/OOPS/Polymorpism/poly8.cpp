@@ -37,12 +37,18 @@ int main()
     obj.start();  // car is starting
     obj.vehicle::start();   // vehicle is starting
 
+    /*
     // Before virtual function / run-time poly
     vehicle *p = new car();
     p->start(); // vehicle is starting
     // p->car::start(); // error: 'car' is not a base of 'vehicle'
+    */
 
-    
+    // After virtual function
+    vehicle *p = new car();
+    p->start(); // object car -> method car : car is starting
+
+
 
 
 
