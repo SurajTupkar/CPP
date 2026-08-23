@@ -1,0 +1,11 @@
+Basic Array Questions
+1. Find the largest element in an array.
+2. Find the smallest element in an array.
+3. Find the sum of all elements in an array.
+4. Find the average of all elements in an array.
+5. Count the number of even and odd elements.
+6. Count the number of positive, negative, and zero elements.
+7. Print the array elements in reverse order.
+8. Find whether a given element exists in the array.
+9. Count how many times a given element occurs in the array.
+10. Find the second largest element in an array.
