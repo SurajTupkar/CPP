@@ -1,5 +1,5 @@
 // 7. Print the array elements in reverse order.
-// 8. Find whether a given element exists in the array.
+
 
 
 #include "iostream"
