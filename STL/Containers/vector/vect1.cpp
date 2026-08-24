@@ -53,6 +53,7 @@ int main()
     12. reserve(size_type n) :Request that the vector capacity be increased to at least n elements, potentially reducing the no. of reallocations.
     13. max_size() : Returns maximum no. of elements that the vector can hold due to system or library limitations
     14. clear()    : Clear elements from vector
+    15. insert(position,value)   : insert value at position
     */
         // 10 added to v1 at starting
         v1.push_back(10);
@@ -132,6 +133,60 @@ int main()
         cout<<"size of vector v1 before clear():"<<v1.size()<<endl;
         v1.clear();
         cout<<"size of vector v1 after clear():"<<v1.size()<<endl;
+
+        vector<int> v6;
+        v6.push_back(10);
+        v6.push_back(20);
+        v6.push_back(30);
+        // insert
+        cout<<"Zero th element of vector v6 before inserting 90 at begining:"<<v6.at(0)<<endl;
+        v6.insert(v6.begin(),90);
+        cout<<"zero th element of vector v6 after inserting 90 at begining of vector v6:"<<v6.at(0)<<endl;
+        cout<<"end element of vector v6 before inserting 100 :"<<*(v6.end()-1)<<endl;
+        v6.insert(v6.end(),100);
+        cout<<"end element of vector v6 after inserting 100:"<<*(v6.end()-1)<<endl;
+
+        // erase(from,to)
+
+        cout<<"size of vector v6 before erase:"<<v6.size()<<endl;
+        v6.erase(v6.begin(),v6.end());
+        cout<<"size of vector v6 after erase:"<<v6.size()<<endl;
+
+        vector<int> v7;
+        vector<int> v8;
+
+        v7.push_back(10);
+        v7.push_back(20);
+        v7.push_back(30);
+
+        v8.push_back(1);
+        v8.push_back(2);
+        v8.push_back(3);
+
+        v7.swap(v8);
+
+        cout<<"After swapping v8 to v7"<<endl;
+        for(int i=0;i<v7.size();i++)
+        {
+            cout<<v7[i]<<" ";
+        }
+
+        cout<<endl;
+
+           cout<<"After swapping v8 to v7"<<endl;
+         for(int i=0;i<v8.size();i++)
+        {
+            cout<<v8[i]<<" ";
+        }
+
+        // for each loop
+
+        cout<<endl;
+        for(int i:v8)
+        {
+            cout<<i<<" ";
+        }
+
 
 
 
