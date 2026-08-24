@@ -1,5 +1,6 @@
 #include "iostream"
 using namespace std;
+#include "vector"
 
 
 /*
@@ -22,6 +23,44 @@ Containers :
 */
 int main()
 {
+    // Creation
+    vector<int> v1;
+    vector<int> v2(10); //create vector with size 10
+    vector<int> v3(10,2); //create vector with size 10 and value 2
+
+    // Methods :
+    /*
+    1. begin
+        -> Returns an iterator pointing to the first element in the vector.
+    
+    2. end
+        -> Returns an iterator pointing to the position just after the last element in the vector.
+    */
+    cout<<*(v3.begin())<<endl;
+    cout<<*(v3.end()-1)<<endl;
+
+    /*
+    Insertion :
+    3. push_back() :
+    4. size() :
+    5. pop_back() :
+    
+    */
+        // 10 added to v1 at starting
+        v1.push_back(10);
+        cout<<*(v1.begin())<<endl;
+        // 20 added to v1 after 10 
+        v1.push_back(20);
+        cout<<"size:"<<v1.size()<<endl;
+        cout<<"size:"<<v2.size()<<endl;
+        cout<<"size:"<<v3.size()<<endl;
+       
+        // pop_back() will remove last element from vector
+        v1.pop_back(); 
+        cout<<"size of v1 atfer pop_back(20):"<<v1.size()<<endl;
+
+
+
 
 
 
