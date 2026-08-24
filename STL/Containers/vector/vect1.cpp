@@ -40,11 +40,12 @@ int main()
     cout<<*(v3.end()-1)<<endl;
 
     /*
-    Insertion :
-    3. push_back() :
-    4. size() :
-    5. pop_back() :
-    
+    3. push_back() : Add an element to the end of the vector
+    4. size()      : Returns the no. of elements in the vector
+    5. pop_back()  : Remove the last element from the vector
+    6. front()     : Return first element from the vector and can run without deferencing
+    7. back()      : Return last element from the vector and can run without deferencing
+    8. empty()     : Check vector is empty or not. 
     */
         // 10 added to v1 at starting
         v1.push_back(10);
@@ -58,6 +59,29 @@ int main()
         // pop_back() will remove last element from vector
         v1.pop_back(); 
         cout<<"size of v1 atfer pop_back(20):"<<v1.size()<<endl;
+
+
+        v1.push_back(30);
+        v1.push_back(40);
+        v1.push_back(50);
+        cout<<"size of v1 after push_back 30,40,50:"<<v1.size()<<endl;
+
+        // front and back
+        cout<<"front element from vector v1:"<<v1.front()<<endl;
+        cout<<"begin element from vector v1:"<<*(v1.begin())<<endl;
+        cout<<"back element from vector v1:"<<v1.back()<<endl;
+        cout<<"end element from vector v1:"<<*(v1.end()-1)<<endl;
+
+        // empty : to check vector is empty or not.
+
+        if(v1.empty()==true)
+        {
+            cout<<"vector is empty"<<endl;
+        }
+        else
+        {
+            cout<<"vector is not empty"<<endl;
+        }
 
 
 
