@@ -47,6 +47,12 @@ int main()
     7. back()      : Return last element from the vector and can run without deferencing
     8. empty()     : Check vector is empty or not. 
     9. Operator [] : To access element from specific index
+        Condition : Value should be present at the specific index otherwise it will give error.
+    10. at()       : To access element of specific index.
+    11. capacity() : Returns the no. of elements that the vector can hold before needing to allocate more space.
+    12. reserve(size_type n) :Request that the vector capacity be increased to at least n elements, potentially reducing the no. of reallocations.
+    13. max_size() : Returns maximum no. of elements that the vector can hold due to system or library limitations
+    14. clear()    : Clear elements from vector
     */
         // 10 added to v1 at starting
         v1.push_back(10);
@@ -100,8 +106,36 @@ int main()
         {
             cout<<v1[i]<<" ";
         }
+        cout<<endl;
 
-        
+        cout<<"element at zero th index: "<<v1.at(0)<<endl;
+
+        // capacity()
+
+        cout<<"capacity of vector v1:"<<v1.capacity()<<endl;
+        v1.push_back(90);
+        cout<<"capacity of vector v1:"<<v1.capacity()<<endl;
+
+        // reverse()
+
+        vector <int> v5;
+        cout<<"capacity of vector v5:"<<v5.capacity()<<endl;
+        cout<<"size of vector v5:"<<v5.size()<<endl;
+        v5.reserve(10);
+        cout<<"capacity of vector v5 after reserse(10):"<<v5.capacity()<<endl;
+        cout<<"size of vector v5 after reserve(10):"<<v5.size()<<endl;
+
+        // max_size()
+        cout<<"max_size of vector v5:"<<v5.max_size()<<endl;
+
+        // clear()
+        cout<<"size of vector v1 before clear():"<<v1.size()<<endl;
+        v1.clear();
+        cout<<"size of vector v1 after clear():"<<v1.size()<<endl;
+
+
+
+
 
 
 
