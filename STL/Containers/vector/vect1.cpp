@@ -46,6 +46,7 @@ int main()
     6. front()     : Return first element from the vector and can run without deferencing
     7. back()      : Return last element from the vector and can run without deferencing
     8. empty()     : Check vector is empty or not. 
+    9. Operator [] : To access element from specific index
     */
         // 10 added to v1 at starting
         v1.push_back(10);
@@ -82,6 +83,25 @@ int main()
         {
             cout<<"vector is not empty"<<endl;
         }
+
+
+        // Operator [] : To access value at specific index.
+
+        cout<<"Zero th index of vector v1:"<<v1[0]<<endl;
+        cout<<"First Index of vector v1:"<<v1[1]<<endl;
+
+        // Updation
+        cout<<"Before updating Element of First Index:"<<v1[0]<<endl;
+        v1[0] = 100;
+        cout<<"After updating Element of First Index:"<<v1[0]<<endl;
+
+        // Printing values from vector v1 through for loop
+        for(int i=0;i<v1.size();i++)
+        {
+            cout<<v1[i]<<" ";
+        }
+
+        
 
 
 
