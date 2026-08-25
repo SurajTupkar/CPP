@@ -54,6 +54,7 @@ int main()
     13. max_size() : Returns maximum no. of elements that the vector can hold due to system or library limitations
     14. clear()    : Clear elements from vector
     15. insert(position,value)   : insert value at position
+    16. erase(iterator position) or erase(iterator first,iterator last) : Removes one or more elements from the vector starting at the specified position
     */
         // 10 added to v1 at starting
         v1.push_back(10);
@@ -185,6 +186,30 @@ int main()
         for(int i:v8)
         {
             cout<<i<<" ";
+        }
+
+        // erase
+        vector<int> v9;
+        v9.push_back(10);
+        v9.push_back(20);
+        v9.push_back(30);
+        v9.push_back(40);
+        cout<<"size of v9 before erase: "<<v9.size()<<endl;
+        v9.erase(v9.begin());
+        cout<<"size of v9 after erase: "<<v9.size()<<endl;
+        cout<<"first element after erasing first element:"<<*(v9.begin())<<endl;
+        v9.erase(v9.begin(),v9.end());
+        cout<<"size of v9 after erasing elements from begin to end:"<<v9.size()<<endl;
+
+
+        // Iterator :
+        cout<<"printing elements through iterator:"<<endl;
+        vector<int>::iterator it = v8.begin();
+
+        while(it != v8.end())
+        {
+            cout<<*it<<" ";
+            it++;
         }
 
 
