@@ -52,8 +52,8 @@ int main()
 
     vehicle* ptr2 = new vehicle();
     car* carptr2 = static_cast<car*>(ptr2);
-    carptr->start(); 
-    carptr->car_start(); // ❌ Unsafe : because compiler not checking actual object type so that's why dynamic_casting comes into the picture.
+    carptr2->start(); 
+    carptr2->car_start(); // ❌ Unsafe : because compiler not checking actual object type so that's why dynamic_casting comes into the picture.
     // invalid downcast → undefined behavior if used as a Car
 
     // car* carptr = dynamic_cast<car*>(ptr1);
@@ -73,12 +73,34 @@ int main()
                     -> If we have static_cast compiler does not look for an object type so if we have vehicle object or car object we can access both clas method of regardless pointer type.
                     -> so in dynamic_cast compiler check object type if object type is not valid so it will give nullptr
                     -> means see in below example
+                    -> Requirement for downcasting with dynamic_cast 
+                        -> base class atleast one method should be virtual or destructor can be virtual with default
+                        like virtual vehicle() == default;
     */
 
     vehicle* ptr3 = new car();
     ptr3->start();
-    car* carptr3 = dynamic_cast
-    ptr3->car_start();
+    car* carptr3 = dynamic_cast<car*>(ptr3);
+    carptr3->car_start();
+    carptr3->start();
+
+    /*
+        In the below dynamic_cast example compiler will actual object type so here actual object type is vehicle
+        and we are trying to access car's methods that will gives us nullptr. 
+    
+    */
+
+    vehicle* ptr4 = new vehicle();
+    ptr4->start();
+    car* carptr4 = dynamic_cast<car*>(ptr4);
+    if(carptr4==nullptr)
+    {
+        cout<<"carptr is null"<<endl;
+    }
+    else
+    {
+        carptr4->car_start();
+    }
 
 
 
