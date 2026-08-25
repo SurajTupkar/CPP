@@ -18,7 +18,7 @@ class vehicle
 
 };
 
-class car:public vehicle
+class car final:public vehicle
 {
     public:
     void start() override final
@@ -28,6 +28,10 @@ class car:public vehicle
 
 };
 
+/*
+error: cannot derive from 'final' base 'car' in derived type 'sportcar'
+because car class is final no one can inherit it
+*/
 class sportcar:public car
 {
     /*
