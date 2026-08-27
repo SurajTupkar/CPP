@@ -189,6 +189,19 @@ class Questions
        
     }
 
+    // 13. Check whether the array is sorted in ascending order.
+
+    void check(int arr[],int size)
+    {
+        for(int i=0;i<size-1;i+=2)
+        {
+            if(arr[i]<arr[i+1])
+            {
+                swap(arr[i],arr[i+1]);
+            }
+        }
+    }
+
 };
 
 
@@ -204,6 +217,9 @@ int main()
     ptr->print_array(arr,std::size(arr));
     cout<<endl;
     ptr->sec_large_sec_min(arr,std::size(arr));
+    int arr1[] = {1,2,3,4,5};
+    ptr->check(arr1,std::size(arr1));
+    ptr->print_array(arr1,std::size(arr1));
 
 
 
