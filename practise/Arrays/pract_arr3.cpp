@@ -142,6 +142,31 @@ class Questions
         }
     }
 
+    /*
+    11. Find the second largest element.
+    12. Find the second smallest element.
+    */
+
+    void sec_large_sec_min(int arr[],int size)
+    {
+        int first_max = INT_MIN;
+        int sec_max = INT_MIN;
+        for(int i=0;i<size;i++)
+        {
+            if(arr[i]>first_max)
+            {
+                sec_max = first_max;
+                first_max = arr[i];
+            }
+            else if(arr[i]>sec_max)
+            {
+                sec_max = arr[i];
+            }
+        }
+        cout<<"first_max:"<<first_max<<endl;
+        cout<<"sec_max:"<<sec_max<<endl;
+    }
+
 };
 
 
@@ -155,6 +180,9 @@ int main()
     ptr->reverse_2(arr,std::size(arr));
     cout<<endl;
     ptr->print_array(arr,std::size(arr));
+    cout<<endl;
+    ptr->sec_large_sec_min(arr,std::size(arr));
+    
 
 
 
