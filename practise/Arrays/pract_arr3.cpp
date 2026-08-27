@@ -151,6 +151,8 @@ class Questions
     {
         int first_max = INT_MIN;
         int sec_max = INT_MIN;
+        int first_min = INT_MAX;
+        int sec_min = INT_MAX;
         for(int i=0;i<size;i++)
         {
             if(arr[i]>first_max)
@@ -165,6 +167,26 @@ class Questions
         }
         cout<<"first_max:"<<first_max<<endl;
         cout<<"sec_max:"<<sec_max<<endl;
+
+        for(int i=0; i<size;i++)
+        {
+            if(arr[i]<first_min)
+            {
+                sec_min = first_min;
+                first_min= arr[i];
+            }
+            else if(arr[i]<sec_min)
+            {
+                sec_min=arr[i];
+            }
+
+        }
+
+        cout<<"first_min:"<<first_min<<endl;
+        cout<<"sec_min:"<<sec_min<<endl;
+
+
+       
     }
 
 };
@@ -182,7 +204,7 @@ int main()
     ptr->print_array(arr,std::size(arr));
     cout<<endl;
     ptr->sec_large_sec_min(arr,std::size(arr));
-    
+
 
 
 
