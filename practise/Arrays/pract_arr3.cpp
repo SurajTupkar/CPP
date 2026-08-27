@@ -108,6 +108,40 @@ class Questions
             }
         }
     }
+
+    /*
+        8. Reverse an array.
+        9. Print an array in reverse order (without modifying it).
+    */
+
+    void reverse_1(int arr[],int size)
+    {
+        for(int i=size-1;i>=0;i--)
+        {
+            cout<<arr[i]<<" ";
+        }
+    }
+
+    void reverse_2(int arr[],int size)
+    {
+        int start = 0;
+        int end = size-1;
+        while(start<end)
+        {
+            swap(arr[start],arr[end]);
+            start++;
+            end--;
+        }
+    }
+
+    void print_array(int arr[],int size)
+    {
+        for(int i=0;i<size;i++)
+        {
+            cout<<arr[i]<<" ";
+        }
+    }
+
 };
 
 
@@ -117,6 +151,10 @@ int main()
     int arr[] = {1,2,3,4,5};
     ptr->min_max_sum_avg_even_odd(arr,std::size(arr));
     ptr->search(arr,std::size(arr),5);
+    ptr->reverse_1(arr,std::size(arr));
+    ptr->reverse_2(arr,std::size(arr));
+    cout<<endl;
+    ptr->print_array(arr,std::size(arr));
 
 
 
