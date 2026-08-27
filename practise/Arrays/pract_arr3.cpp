@@ -16,7 +16,7 @@ Level 1 – Basics (Warm-up)
 13. Check whether the array is sorted in ascending order.
 14. Find the maximum and minimum in a single traversal.
 15. Copy one array into another.
-
+16. Check whether the array is sorted in descending order.
 
 Questions from lecture :
 
@@ -191,15 +191,31 @@ class Questions
 
     // 13. Check whether the array is sorted in ascending order.
 
-    void check(int arr[],int size)
+    bool check(int arr[],int size)
     {
-        for(int i=0;i<size-1;i+=2)
+        for(int i=0;i<size;i++)
         {
-            if(arr[i]<arr[i+1])
+            if(arr[i]>arr[i+1])
             {
-                swap(arr[i],arr[i+1]);
+                return false;
+               // swap(arr[i],arr[i+1]);
+
+               break;
             }
         }
+        return true;
+    }
+
+    // 16. Check whether the array is sorted in descending order.
+
+    bool check_desc(int arr[], int size)
+    {
+        for(int i=0; i<size;i++)
+        {
+            if(arr[i]<arr[i+1]);
+            return false;
+        }
+        return true;
     }
 
 };
@@ -217,9 +233,20 @@ int main()
     ptr->print_array(arr,std::size(arr));
     cout<<endl;
     ptr->sec_large_sec_min(arr,std::size(arr));
-    int arr1[] = {1,2,3,4,5};
-    ptr->check(arr1,std::size(arr1));
-    ptr->print_array(arr1,std::size(arr1));
+    int arr1[] = {1,2,-1,3,4,5};
+    if(ptr->check(arr1,std::size(arr1)))
+    {
+        cout<<"sorted in ascending order"<<endl;
+    }
+    else
+    {
+        cout<<"not sorted in ascending order"<<endl;
+    }
+    if(ptr->check_desc(arr1,std::size(arr1)))
+    {
+        cout<<"Sorted in descending order";
+    }
+
 
 
 
