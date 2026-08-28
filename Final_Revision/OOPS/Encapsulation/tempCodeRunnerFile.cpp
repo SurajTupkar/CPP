@@ -1,0 +1,1 @@
+ vehicle* copyptr(ptr);

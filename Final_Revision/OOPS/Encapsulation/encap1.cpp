@@ -15,6 +15,18 @@ Encapsulation
         -> To protect direct access to data.
         -> To control how data is access and modified
 
+Topics :
+    -> 1. class
+    -> 2. objects
+    -> 3. Access specifiers
+    -> 4. constructors
+        -> types
+            -> default
+            -> parameterised
+            -> copy
+    -> 5. destructors
+    -> 6. constructor creation orders
+    -> 7. destructor creation orders
 
 */
 
@@ -23,18 +35,54 @@ class vehicle
 {
     private:
     string vin;
+    string veh_name;
 
     public:
     int veh_id;
 
+    // setter
     void setvin(string vin)
     {
         this->vin = vin;
     }
 
+    //getter
     string getvin()
     {
         return vin;
+    }
+
+    string getveh_name()
+    {
+        return veh_name;
+    }
+
+
+    // default constructor
+    vehicle()
+    {
+        cout<<"default constructor called"<<endl;
+    }
+
+    // parameterised constructor
+    vehicle(string veh_name)
+    {
+        this->veh_name = veh_name;
+    }
+
+    // copy constructor
+
+    vehicle(const vehicle &cpyptr)
+    {
+        cout<<"copy constructor called"<<endl;
+        this->veh_name = cpyptr.veh_name;
+    }
+
+
+
+    ~vehicle()
+    {
+        cout<<"destructor called"<<endl;
     }
 
 };
@@ -52,6 +100,24 @@ int main()
     vehicle obj;
     obj.veh_id = 123;
     cout<<obj.veh_id<<endl;
+
+    obj.setvin("VIN123");
+    cout<<obj.getvin()<<endl;
+
+    // dynamic
+    vehicle *ptr = new vehicle("PHEV");
+    ptr->veh_id = 890;
+    cout<<ptr->veh_id<<endl;
+
+    ptr->setvin("VIN890");
+    cout<<ptr->getvin()<<endl;
+    cout<<ptr->getveh_name()<<endl;
+
+    vehicle* copyptr = new vehicle(*ptr);
+    cout<<copyptr->getveh_name()<<endl;
+    
+
+    delete ptr;
     
 
 
