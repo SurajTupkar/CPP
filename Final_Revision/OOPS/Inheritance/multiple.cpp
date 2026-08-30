@@ -19,6 +19,7 @@ Topics :
         -> 
     -> 7. Virtual Inheritance
     -> 8. Constructor behaviour with virtual inheritance
+
 */
 
 class vehicle
@@ -69,6 +70,7 @@ int main()
 {
     car *ptr = new car();
     ptr->vehicle::veh_mode();
+    ptr->vehicle_type::veh_mode();
 
     return 0;
 }
