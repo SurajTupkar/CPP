@@ -2,7 +2,7 @@
 using namespace std;
 
 // Function overloading with const by value
-// Function overloading with by reference
+// Function overloading with const by reference
 
 class vehicle
 {
