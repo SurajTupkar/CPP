@@ -1,6 +1,6 @@
 /*
 Virtual Destructor:
-    -> what happens without virtual destructor 
+    -> A virtual destructor ensures proper destruction of a derived object when it is deleted through a base-class pointer. The derived destructor is called first, followed by the base destructor.
 */
 
 #include "iostream"
