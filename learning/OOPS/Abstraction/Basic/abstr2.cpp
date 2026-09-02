@@ -38,6 +38,9 @@ Note :
                     can create derived-class objects
 
 
+
+Note :
+    A base pointer can access any member declared in the base class. If that member is virtual, the derived implementation can execute through runtime polymorphism. Derived-specific members are not directly accessible through the base pointer; we need downcasting if we specifically need them.
 */
 
 #include "iostream"
