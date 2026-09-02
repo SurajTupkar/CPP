@@ -1,0 +1,24 @@
+Abstraction
+│
+├── 1. What is Abstraction?
+│
+├── 2. Why do we need Abstraction?
+│
+├── 3. How C++ achieves Abstraction
+│
+├── 4. Pure Virtual Function ⭐
+│
+├── 5. Abstract Class ⭐
+│
+├── 6. Can we create an object of Abstract Class?
+│
+├── 7. Base Pointer → Derived Object
+│      Vehicle* ptr = new Car();
+│
+├── 8. Multiple Pure Virtual Functions
+│
+├── 9. Abstract Class with Normal Functions
+│
+├── 10. Interface concept in C++
+│
+└── 11. Abstraction vs Encapsulation ⭐
