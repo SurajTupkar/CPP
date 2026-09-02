@@ -80,6 +80,11 @@ class car:public vehicle
         cout<<"Car stop"<<endl;
     }
 
+    void service()
+    {
+        cout<<"service method of car"<<endl;
+    }
+
     car()
     {
         cout<<"car's constructor called"<<endl;
@@ -91,6 +96,8 @@ class car:public vehicle
     }
 
 
+
+
 };
 
 int main()
@@ -98,6 +105,8 @@ int main()
     vehicle* ptr = new car();
     ptr->stop();
     ptr->start();
+    car* carptr = dynamic_cast<car*>(ptr);
+    carptr->service();
     delete ptr;
 
 
