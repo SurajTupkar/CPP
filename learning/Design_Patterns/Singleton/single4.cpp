@@ -35,7 +35,8 @@ int main()
     singleton* ptr1 = singleton::getInstance();
     singleton* ptr2 = singleton::getInstance();
     cout<<(ptr1==ptr2)<<endl;
-    delete ptr1,ptr2;
+    delete ptr1;
+    delete ptr2;
 
 
 

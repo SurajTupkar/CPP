@@ -28,6 +28,9 @@ int main()
         cout<<"both objects are different"<<endl;
     }
 
+    delete ptr1;
+    delete ptr2;
+
 
 
     return 0;

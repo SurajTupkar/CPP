@@ -20,6 +20,7 @@ Thread-safe Singleton Design Patter :
 */
 
 #include "iostream"
+#include "mutex"
 using namespace std;
 
 class singleton
@@ -55,7 +56,8 @@ int main()
     singleton* ptr2 = singleton::getInstance();
     cout<<(ptr1==ptr2)<<endl;
 
-    delete ptr1,ptr2;
+    delete ptr1;
+    delete ptr2;
 
 
     return 0;
