@@ -53,7 +53,9 @@ int main()
 
     cout<<(ptr1==ptr2)<<endl;
 
-    delete ptr1,ptr2;
+    // delete ptr1,ptr2; only delete ptr1 so write like below
+    delete ptr1;
+    delete ptr2;
 
 
 
