@@ -10,7 +10,7 @@ class drivable
 {
     public:
     virtual void drive() = 0;
-    virtual ~drivable()
+    virtual ~drivable() 
     {
         cout<<"drivable's destructor called"<<endl;
     }

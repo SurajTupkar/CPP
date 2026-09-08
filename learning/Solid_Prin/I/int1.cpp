@@ -15,7 +15,7 @@ class vehicle
 {
     public:
     virtual void drive() = 0;
-    virtual void fly() = 0;
+   // virtual void fly() = 0;
 };
 
 class car:public vehicle
