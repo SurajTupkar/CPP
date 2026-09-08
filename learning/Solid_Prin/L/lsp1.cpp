@@ -74,7 +74,7 @@ int main()
     */
 
     // Now our code breaks it LSP 
-    vehicle* ptr = new bicycle();
+    //vehicle* ptr = new bicycle();
 
 
 
