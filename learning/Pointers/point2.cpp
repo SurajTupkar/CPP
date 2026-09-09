@@ -23,6 +23,15 @@ int main()
     int* ptr1 = &a;
     cout<<"size of int type of pointer:"<<sizeof(ptr1)<<endl;
 
+    /*
+    move semantics
+        -> We can transfer one object to another
+    */     
+    int b = 30;
+    int c = move(b);
+    cout<<"value of b:"<<b<<endl;
+    cout<<"value of c:"<<c<<endl;
+
 
 
 
