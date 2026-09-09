@@ -12,6 +12,10 @@ class vehicle
 
 int main()
 {
+    /*
+    Any type of pointer will store 8 bytes of memory
+    
+    */
     vehicle* ptr = new vehicle();
     cout<<"size of vehicle type of pointer:"<<sizeof(ptr)<<endl;
 

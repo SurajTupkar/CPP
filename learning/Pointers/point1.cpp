@@ -40,6 +40,8 @@ int main()
         cout<<"not nullptr"<<endl;
     }
 
+    cout<<ptr1<<endl; 
+
 
 
 
