@@ -37,6 +37,8 @@ int main()
     cout<<"address of c:"<<ptr3<<endl;
     cout<<"address of c:"<<&c<<endl;
 
+    // 4. 
+
 
 
 
