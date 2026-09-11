@@ -216,6 +216,39 @@ void sec_max_min(int arr[],int size)
     cout<<"second_max:"<<sec_max<<endl;
 }
 
+/*
+14. Check whether the array is sorted in ascending order.
+15. Check whether the array is sorted in descending order.
+*/
+
+bool check_asc(int arr[],int size)
+{
+    bool flag = true;
+    for(int i=0;i<size-1;i++)
+    {
+        if(arr[i]>arr[i+1])
+        {
+            flag = false;
+            break;
+        }
+    }
+    return flag;
+}
+
+bool check_desc(int arr[],int size)
+{   
+    bool flag = true;
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]<arr[i+1])
+        {
+            flag = false;
+            break;
+        }
+    }
+    return flag;
+}
+
 };
 
 int main()
@@ -242,6 +275,30 @@ int main()
     ptr->count_occ(arr3,size(arr3),2);
 
     ptr->sec_max_min(arr1,size(arr1));
+
+    int arr4[] = {1,2,3,4};
+    for(int i=0;i<size(arr4);i++)
+    {
+        cout<<arr4[i]<<" ";
+    }
+    if(ptr->check_asc(arr4,size(arr4)))
+    {
+        cout<<":Ascending"<<endl;
+    }
+    else
+    {
+        cout<<":descending"<<endl;
+    }
+
+    int arr5[] = {6,5,4,3,2,1};
+     for(int i=0;i<size(arr5);i++)
+    {
+        cout<<arr5[i]<<" ";
+    }
+    if(ptr->check_desc(arr5,size(arr5)))
+    {
+        cout<<":Descending order"<<endl;
+    }
 
 
 
