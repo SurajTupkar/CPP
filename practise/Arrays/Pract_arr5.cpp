@@ -106,6 +106,7 @@ void sum_avg_even_odd(int arr[],int size)
     cout<<"avg:"<<sum/size<<endl;
     cout<<"even:"<<even<<endl;
     cout<<"odd:"<<odd<<endl;
+    cout<<"***********************************"<<endl;
 }
 
 
@@ -114,9 +115,50 @@ void sum_avg_even_odd(int arr[],int size)
 8. Find the index of a given element.
 */
 
-void search_index(int arr[],int size)
+void search_index(int arr[],int size,int key)
 {
-    
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i] == key)
+        {
+            cout<<"Time Complexity:O(n) and Space Complexity:O(1)"<<endl;
+            cout<<"present"<<endl;
+            cout<<"index:"<<i<<endl;
+            cout<<"********************************"<<endl;
+        }
+    }
+}
+
+// reverse_an_array
+
+void reverse_1(int arr[],int size)
+{
+    int start = 0;
+    int end = size-1;
+    while(start<end)
+    {
+        swap(arr[start],arr[end]);
+        start++;
+        end--;
+    }
+}
+
+// reverse -> 2nd approach
+
+void reverse_2(int arr[],int size)
+{
+    for(int i=0,j=size-1;i<j;i++,j--)
+    {
+        swap(arr[i],arr[j]);
+    }
+}
+
+void PrintArray(int arr[],int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
 }
 
 };
@@ -127,6 +169,19 @@ int main()
     int arr[] = {1,2,3,4,5,-4,-2};
     ptr->min_max(arr,size(arr));
     ptr->sum_avg_even_odd(arr,size(arr));
+    ptr->search_index(arr,size(arr),5);
+    cout<<"Time Complexity:O(n) and Space Complexity:O(1)"<<endl;
+    cout<<"reverse_approach_1:"<<" ";
+    ptr->reverse_1(arr,size(arr));
+    ptr->PrintArray(arr,size(arr));
+    cout<<endl;
+
+    int arr1[] = {1,2,3,4,5};
+    cout<<"reverse_approach_2:"<<" ";
+    ptr->reverse_2(arr1,size(arr1));
+    ptr->PrintArray(arr1,size(arr1));
+    cout<<endl;
+    cout<<"*******************************"<<endl;
 
 
 
