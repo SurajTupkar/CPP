@@ -124,6 +124,7 @@ void search_index(int arr[],int size,int key)
             cout<<"Time Complexity:O(n) and Space Complexity:O(1)"<<endl;
             cout<<"present"<<endl;
             cout<<"index:"<<i<<endl;
+            break;
             cout<<"********************************"<<endl;
         }
     }
@@ -161,6 +162,60 @@ void PrintArray(int arr[],int size)
     }
 }
 
+// 11. Count the occurrences of a given element.
+
+void count_occ(int arr[],int size,int element)
+{
+    int count = 0;
+    for(int i=0;i<size;i++)
+    {
+            if(arr[i]==element)
+            {
+                count++;
+            }
+    }
+    cout<<"No of Occurence:"<<count<<endl;
+}
+
+/*
+12. Find the second largest element.
+13. Find the second smallest element.
+*/
+
+void sec_max_min(int arr[],int size)
+{
+    int first_min = INT_MAX;
+    int sec_min = INT_MAX;
+    int first_max = INT_MIN;
+    int sec_max = INT_MIN;
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]<first_min)
+        {
+            sec_min = first_min;
+            first_min = arr[i];
+        }
+        else if(arr[i]<sec_min)
+        {
+            sec_min = arr[i];
+        }
+
+        if(arr[i]>first_max)
+        {
+            sec_max = first_max;
+            first_max = arr[i];
+        }
+        else if(arr[i]>sec_max)
+        {
+            sec_max = arr[i];
+        }
+    }
+    cout<<"first_min:"<<first_min<<endl;
+    cout<<"second_min:"<<sec_min<<endl;
+    cout<<"first_max:"<<first_max<<endl;
+    cout<<"second_max:"<<sec_max<<endl;
+}
+
 };
 
 int main()
@@ -182,6 +237,11 @@ int main()
     ptr->PrintArray(arr1,size(arr1));
     cout<<endl;
     cout<<"*******************************"<<endl;
+
+    int arr3[] = {1,2,2,2,3,4};
+    ptr->count_occ(arr3,size(arr3),2);
+
+    ptr->sec_max_min(arr1,size(arr1));
 
 
 
