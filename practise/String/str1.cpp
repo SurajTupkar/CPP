@@ -2,7 +2,7 @@
 #include "string"
 using namespace std;
 
-
+// reverse_1
 void reverse_1(string str,int size)
 {
     int start = 0;
@@ -38,6 +38,27 @@ bool check_palindrome(string str,int size)
 
 }
 
+// first non-repeating character
+
+void non_rep(string str,int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        int count = 0;
+        for(int j=0;j<size;j++)
+        {
+            if(str[i]==str[j])
+            {
+                count++;
+            }
+        }
+        if(count==1)
+        {
+            cout<<str[i];
+            break;
+        }
+    }
+}
 
 int main()
 {
@@ -56,6 +77,9 @@ int main()
         cout<<"Not Palindrome"<<endl;
     }
     
+
+    string str3 = "aabccdd";
+    non_rep(str3,size(str3));
    
 
 
