@@ -1,0 +1,18 @@
+String Questions
+
+1. Reverse 
+2. Check palindrome
+3. First non-repeating character in a string
+4. Count vowels/consonants
+5. Count frequency of characters
+6. Find duplicate characters
+7. Remove duplicate characters
+8. Find first non-repeating character
+9. Reverse words in a string
+10. Check whether two strings are anagrams
+11. Find occurrence of a character
+12. Find occurrence of a substring
+13. Remove spaces
+14. Convert lowercase ↔ uppercase
+15. Find longest word
+16. Check if one string is rotation of another
