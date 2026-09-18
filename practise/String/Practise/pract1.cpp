@@ -2,7 +2,6 @@
 using namespace std;
 
 // reverse
-
 void reverse(string str,int size)
 {
     int start = 0;
@@ -21,7 +20,6 @@ void reverse(string str,int size)
 }
 
 // check palindrome
-
 bool palindrome(string str,int size)
 {
     int start = 0;
@@ -38,7 +36,48 @@ bool palindrome(string str,int size)
     return true;
 }
 
+// First non-repeating character
+// aabbzccdee
+void non_repeat(string str,int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        int count = 0;
+        for(int j=0;j<size;j++)
+        {
+            if(str[i]==str[j])
+            {
+                count++;
+            }
+        }
+        if(count==1)
+        {
+            cout<<str[i]<<endl;
+            break;
+        }
+    }
+}
 
+//  Count vowels/consonants
+
+void count(string str,int length)
+{
+    int vowel = 0;
+    int conso = 0;
+    for(int i=0;i<length;i++)
+    {
+        if(str[i]=='a' || str[i] =='e' || str[i] == 'i' || str[i] =='o' || str[i] =='u' )
+        {
+            vowel++;
+        }
+        else
+        {
+            conso++;
+        }
+    }
+    cout<<"vowels:"<<vowel<<endl;
+    cout<<"consonants"<<conso<<endl;
+}
     
     
 int main()
@@ -57,8 +96,9 @@ int main()
         cout<<"Not Palindrome"<<endl;
     }
 
-
-
+    string str2 = "aabbzccdee";
+    non_repeat(str2,size(str2));
+    count(str,str.length());
 
 
     return 0;
