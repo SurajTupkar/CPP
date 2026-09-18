@@ -58,6 +58,27 @@ class questions
 
     }
 
+    // 3. First non-repeating character in a string
+    void first_no_repeating_char(string str,int size)
+    {
+        for(int i=0;i<size;i++)
+        {
+            int count = 0;
+            for(int j=0;j<size;j++)
+            {
+                if(str[i]==str[j])
+                {
+                    count++;
+                }
+            }
+            if(count==1)
+            {
+                cout<<str[i]<<endl;
+                break;
+            }
+        }
+    }
+
 };
 
 int main()
@@ -74,6 +95,9 @@ int main()
     {
         cout<<"It's not a palindrome string"<<endl;
     }
+
+    string str2 = "aabbcddeffghi";
+    ptr->first_no_repeating_char(str2,str2.length());
 
 
     return 0;
