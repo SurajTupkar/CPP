@@ -13,8 +13,7 @@ class questions
 {
     public:
     
-    // reverse
-
+    // 1. reverse
     void reverse(string str,int size)
     {
         cout<<"Before Reversing"<<endl;
@@ -40,16 +39,41 @@ class questions
         }
     }
 
+    // 2. Check palindrome
+    bool check_palindrome(string str,int size)
+    {
+        cout<<endl;
+        int start = 0;
+        int end   = size-1;
+        while (start<end)
+        {
+            if(tolower(str[start]) != tolower(str[end]))
+            {
+                return false;
+            }
+            start++;
+            end--;
+        }
+        return true;
+
+    }
 
 };
 
 int main()
 {
     string str = "Hello";
+    string str1 = "Nayan";
     questions* ptr = new questions();
     ptr->reverse(str,str.length());
-
-
+    if(ptr->check_palindrome(str1,str1.length()))
+    {
+        cout<<"It's a palindrome string"<<endl;
+    }
+    else
+    {
+        cout<<"It's not a palindrome string"<<endl;
+    }
 
 
     return 0;
