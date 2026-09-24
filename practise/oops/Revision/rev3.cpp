@@ -11,7 +11,6 @@ class vehicle
         cout<<"veh_start_method"<<endl;
     }
 
-
 };
 
 class car : public vehicle
