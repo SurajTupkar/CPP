@@ -159,7 +159,9 @@ class questions
    {
         int first_min = INT_MAX;
         int sec_min = INT_MAX;
-        for(int i=0;i<size-1;i++)
+        int first_max = INT_MIN;
+        int sec_max = INT_MIN;
+        for(int i=0;i<size;i++)
         {
             if(arr[i]<first_min)
             {
@@ -170,12 +172,67 @@ class questions
             {
                 sec_min = arr[i];
             }
+            if(arr[i]>first_max)
+            {
+               sec_max = first_max;
+               first_max = arr[i];
+            }
+            else if(arr[i]>sec_max)
+            {
+                sec_max = arr[i];
+            }
         }
 
         cout<<"first_min:"<<first_min<<endl;
         cout<<"sec_min:"<<sec_min<<endl;
+        cout<<"first_max:"<<first_max<<endl;
+        cout<<"sec_max:"<<sec_max<<endl;
 
    }
+
+   /*
+    14. Check whether the array is sorted in ascending order.
+    15. Check whether the array is sorted in descending order.
+   */
+
+   bool check_asc(int arr[],int size)
+   {
+        for(int i=0;i<size-1;i++)
+        {
+            if(arr[i]>arr[i+1])
+            {
+                return false;
+            }
+        }
+        return true;
+   }
+
+   bool check_desc(int arr[],int size)
+   {
+        for(int i=0;i<size-1;i++)
+        {
+            if(arr[i]<arr[i+1])
+            {
+                return false;
+            }
+        }
+        return true;
+   }
+
+//    16. Copy one array into another.
+
+void copy_one_to_another(int arr1[],int arr2[],int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        arr2[i] = arr1[i];
+    }
+
+    for(int i=0;i<size;i++)
+    {
+        cout<<arr2[i]<<" ";
+    }
+}
 
 };
 
@@ -200,6 +257,30 @@ int main()
     cout<<endl;
     int arr3[] = {1,2,3,4,5};
     ptr->sec_max_min(arr3,size(arr3));
+
+    int arr4[] = {1,2,3,4,5};
+
+    if(ptr->check_asc(arr4,size(arr4)))
+    {
+        cout<<"sorted in ascending order"<<endl;
+    }
+    else
+    {
+        cout<<"Not sorted in ascending order"<<endl;
+    }
+
+    int arr5[] = {9,4,2,1,-8};
+     if(ptr->check_desc(arr5,size(arr5)))
+    {
+        cout<<"sorted in descending order"<<endl;
+    }
+    else
+    {
+        cout<<"Not sorted in descending order"<<endl;
+    }
+
+    int arr6[size(arr5)];
+    ptr->copy_one_to_another(arr5,arr6,size(arr5));
     
 
 
