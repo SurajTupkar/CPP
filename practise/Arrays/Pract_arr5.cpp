@@ -249,6 +249,16 @@ bool check_desc(int arr[],int size)
     return flag;
 }
 
+// 17. swap alternate
+
+void swap_alter(int arr[],int size)
+{
+    for(int i=0;i<size-1;i+=2)
+    {
+        swap(arr[i],arr[i+1]);
+    }
+}
+
 };
 
 int main()
@@ -299,6 +309,9 @@ int main()
     {
         cout<<":Descending order"<<endl;
     }
+
+    ptr->swap_alter(arr5,size(arr5));
+    ptr->PrintArray(arr5,size(arr5));
 
 
 
