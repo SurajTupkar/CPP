@@ -321,6 +321,23 @@ void sort(int arr[],int size)
     }
 }
 
+
+// 21. Intersection of array (same element from two array)
+
+void intersection(int arr1[],int arr2[],int size1,int size2)
+{
+    for(int i=0;i<size1;i++)
+    {
+        for(int j=0;j<size2;j++)
+        {
+            if(arr1[i]==arr2[j])
+            {
+                cout<<arr1[i]<<" ";
+            }
+        }
+    }
+}
+
 };
 
 
@@ -381,6 +398,13 @@ int main()
     cout<<endl;
     int arr9[] = {1,0,0,1,1,0};
     ptr->sort(arr9,size(arr9));
+
+    int arr10[] = {1,2,3,4,5};
+    int arr11[] = {2,5,1,3};
+
+    cout<<endl;
+    ptr->intersection(arr10,arr11,size(arr10),size(arr11));
+    
     
 
 
