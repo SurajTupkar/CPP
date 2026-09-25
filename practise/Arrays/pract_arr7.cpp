@@ -234,6 +234,93 @@ void copy_one_to_another(int arr1[],int arr2[],int size)
     }
 }
 
+/*
+18. find unique element (Non-Repeating)
+    -> 2 Approaches
+        -> 1. Duplicate element replace as 0
+        -> 2. XOR operator
+*/
+
+void unique_element(int arr[],int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        for(int j=i+1;j<size;j++)
+        {
+            if(arr[i]==arr[j])
+            {
+                arr[i] = 0;
+                arr[j] = 0;
+            }
+        }
+    }
+
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]!=0)
+        {
+            cout<<arr[i]<<" ";
+        }
+    }
+
+   
+
+}
+
+int unique_elemet_1(int arr[],int size)
+{
+    int ans = 0;
+    for(int i=0;i<size;i++)
+    {
+        ans = ans^arr[i];
+    }
+    return ans;
+}
+
+ // 19. find duplicate element
+void duplicate(int arr[],int size)
+    {
+        for(int i=0;i<size;i++)
+        {
+            for(int j=i+1;j<size;j++)
+            {
+                if(arr[i]==arr[j])
+                {
+                    cout<<arr[i]<<" ";
+                }
+            }
+        }
+    }
+
+
+// 24. Sort 0's & 1's
+
+void sort(int arr[],int size)
+{
+    int start = 0;
+    int end = size-1;
+    while(start<end)
+    {
+        if(arr[start]==0)
+        {
+            start++;
+        }
+        else if(arr[end]==1)
+        {
+            end--;
+        }
+        else
+        {
+            swap(arr[start],arr[end]);
+        }
+    }
+
+    for(int i=0;i<size;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+}
+
 };
 
 
@@ -281,6 +368,19 @@ int main()
 
     int arr6[size(arr5)];
     ptr->copy_one_to_another(arr5,arr6,size(arr5));
+
+    cout<<endl;
+    int arr7[] = {1,2,2,3,3,4,4,5,5};
+    ptr->unique_element(arr7,size(arr7));
+    cout<<endl;
+    cout<<"unique element in an array:"<<ptr->unique_elemet_1(arr7,size(arr7))<<endl;
+
+    int arr8[] = {1,2,2,3,3,4,4,5,5};
+    ptr->duplicate(arr8,size(arr8));
+
+    cout<<endl;
+    int arr9[] = {1,0,0,1,1,0};
+    ptr->sort(arr9,size(arr9));
     
 
 
