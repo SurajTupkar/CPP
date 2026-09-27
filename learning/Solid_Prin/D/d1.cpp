@@ -2,6 +2,9 @@
 using namespace std;
 
 
+// Dependecy Inversion Principle
+
+
 int main()
 {
 
