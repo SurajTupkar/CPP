@@ -15,7 +15,7 @@ class A
 class B:public A
 {
     public:
-     B():A(10)
+    B():A(10)
     {
         cout<<"B's constructor called"<<endl;
     }

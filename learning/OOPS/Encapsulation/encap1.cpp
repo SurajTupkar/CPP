@@ -43,9 +43,7 @@ int main()
     cout<<obj->getroll_no()<<endl;
 
 
-
-
-
+    
 
     return 0;
 }

@@ -22,6 +22,12 @@ int main()
    //  q = &b;   // Not Allowed because const to pointer which is not allowed to change the address
 
 
+//    const pointer to const
+    const int *const p = &a;
+    *p = 20;
+    p = &b; 
+
+
 
 
 

@@ -19,14 +19,19 @@ Topics :
     -> 1. class
     -> 2. objects
     -> 3. Access specifiers
+        -> Public
+        -> private
+            -> access 
+                -> getter
+                -> setter
     -> 4. constructors
         -> types
             -> default
             -> parameterised
             -> copy
     -> 5. destructors
-    -> 6. constructor creation orders
-    -> 7. destructor creation orders
+    -> 6. constructor creation order
+    -> 7. destructor destruction order
 
 */
 
@@ -92,8 +97,8 @@ int main()
     /*
     object :
         -> can create using 2 ways
-            => static
-            => dynamic
+            => static  -> stored in the stack 
+            => dynamic -> stored in the heap and pointer store in stack and pointing to heap memory
     */ 
 
     // static

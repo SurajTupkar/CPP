@@ -6,6 +6,10 @@ final Keyword
 │
 ├── final function
 └── final class
+
+-> final can be applied to a virtual function or a class. 
+-> When applied to a virtual function, it prevents further overriding. 
+-> When applied to a class, it prevents further inheritance.
 */
 
 class vehicle
@@ -18,7 +22,7 @@ class vehicle
 
 };
 
-class car final:public vehicle
+class car :public vehicle
 {
     public:
     void start() override final
@@ -28,10 +32,21 @@ class car final:public vehicle
 
 };
 
+
 /*
-error: cannot derive from 'final' base 'car' in derived type 'sportcar'
+error: cannot derive from 'final' base 'GTcar' in derived type 'skoda'
 because car class is final no one can inherit it
 */
+class GTcar final:public vehicle
+{
+    public:
+
+};
+
+class skoda : public GTcar
+{
+    public:
+};
 class sportcar:public car
 {
     /*

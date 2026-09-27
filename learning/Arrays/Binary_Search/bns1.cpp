@@ -34,7 +34,7 @@ int binary_search(int arr[],int size,int key)
 int main()
 {
     int arr[] = {1,2,3,4,5};
-    int index = binary_search(arr,std::size(arr),5);
+    int index = binary_search(arr,std::size(arr),50);
     cout<<"index: "<<index<<endl;
 
 
