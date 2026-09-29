@@ -37,6 +37,7 @@ int main()
     ptr4->speed();
     shared_ptr<vehicle>ptr5 = ptr4;
     ptr5->speed();
+    cout<<"Reference:"<<ptr5.use_count()<<endl;
 
 
     weak_ptr<vehicle>ptr6 = ptr4;
