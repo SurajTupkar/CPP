@@ -33,6 +33,19 @@ int main()
     ptr3->speed();
 
 
+    shared_ptr<vehicle> ptr4 = make_shared<vehicle>();
+    ptr4->speed();
+    shared_ptr<vehicle>ptr5 = ptr4;
+    ptr5->speed();
+
+
+    weak_ptr<vehicle>ptr6 = ptr4;
+    if(auto temp = ptr6.lock())
+    {
+        temp->speed();
+    }
+
+
 
 
     return 0;
