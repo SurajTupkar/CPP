@@ -24,7 +24,9 @@ class vehicle
 int main()
 {
     vehicle obj(100);
-    vehicle obj1(obj);
+    vehicle obj1(obj); // copy constructor -> we copy first object to another while creating second object
+
+    obj1 = obj; // copy assignment -> first we create both object the copy object to another
 
 
 
