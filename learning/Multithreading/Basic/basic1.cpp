@@ -26,7 +26,26 @@ What is Thread
 
     -> What is execution Flow
         -> execution flow means sequence in which instruction are executed
-            -> like if i have code 
+            -> like if i have code for adding two numbers 
+            ->  int a = 10;
+                int b = 20;
+                int c = a + b;
+                cout<<c<<endl; 
+            -> so this is execution flow 
+
+Why do we need thread ?
+    -> suppose my application needs to different tasks
+        -> like 1) Receives data from ECU
+                2) Processing Data
+                3) Write Logs
                 
+    -> Without thread they can run sequentialy like
+        -> first we receive data from ECU
+        -> Then process data
+        -> the write logs
+    -> But with the threads
+        Thread 1 : Receives data from ECU
+        Thread 2 : Process Data
+        Thread 3 : Write logs
 
 */
