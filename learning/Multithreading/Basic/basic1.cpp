@@ -60,4 +60,40 @@ What are shared and separate between threads
             -> Means small and fast storage location in a cpu core
         -> Program Counter/Instructor counter (PC) 
 
+Concurrency and parallelism
+    -> Concurrency
+        -> Multiple tasks/threads are making progress during the same period of time 
+    -> Like let suppose I have 3 threads t1,t2, and t3 in a single cpu core
+    -> so instead of running one thread for long period of time
+        t1,t2 and t3 or all threads makes progress during same period of time that is called concurrency
+    
+    -> Parallelism
+        -> Multiple tasks/threads are running simultaneously or parallely on multiple cpu core
+        or
+        -> Multiple tasks/threads are actually executing at the same time on different cpu cores
+
+    -> Let suppose I have three threads t1,t2,t3 
+        -> This all three threading are executing on same time on different threads
+        -> Like Core 1 -> Thread 1
+                Core 2 -> Thread 2
+                Core 3 -> Thread 3
+
+Race Condition 
+    -> Multiple threads are trying to access critical section or shared resource at a time and result depends on timing and order of their execution.
+        ->  Like let suppose, two peoples are trying to book a single ticket
+        -> Solution 
+            -> Synchronization Mechanism
+                -> 1) Mutex 
+                        -> using
+                            -> 1) lock_guards
+                            -> 2) unique_locks
+                    2) Conditional variables
+                    3) Atomic Operations
+
+Mutex 
+    -> Mutual exclusion
+        -> A synchronization mechansim which prevents accessing critical section or shared resources by multiple threads at a same time
+        and prevents race condition
+
+    -> 1) lock_guards
 */
