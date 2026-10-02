@@ -48,4 +48,16 @@ Why do we need thread ?
         Thread 2 : Process Data
         Thread 3 : Write logs
 
+What are shared and separate between threads
+    1) Shared
+        -> Code
+        -> Global variable
+        -> Static Variable
+        -> Heap 
+    2) Separate
+        -> Stack
+        -> Registers   
+            -> Means small and fast storage location in a cpu core
+        -> Program Counter/Instructor counter (PC) 
+
 */
