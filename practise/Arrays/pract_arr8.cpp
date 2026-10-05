@@ -94,6 +94,22 @@ class question
 
     }
 
+    /*
+        7. Search for a given element (Linear Search).
+        8. Find the index of a given element.
+    */
+
+    int search_index(int arr[],int size,int key)
+    {
+        for(int i=0;i<size;i++)
+        {
+            if(arr[i]==key)
+            {
+                return i;
+            }
+        }
+        return 0;
+    }
 
 
 };
@@ -108,6 +124,17 @@ int main()
 
     delete ptr;
     ptr=nullptr;
+
+    int ans = ptr->search_index(arr,size(arr),3);
+    if(ans>0)
+    {
+        cout<<"The Index of given element:"<<ans<<endl;
+    }
+    else
+    {
+        cout<<"The given element is not present"<<endl;
+    }
+
 
 
     return 0;
