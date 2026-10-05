@@ -149,6 +149,61 @@ class question
         }
     }
 
+    // 11. Count the occurrences of a given element.
+
+    int occurence(int arr[],int size,int key)
+    {
+        int occ = 0;
+        for(int i=0;i<size;i++)
+        {
+            if(arr[i]==key)
+            {
+                occ++;
+            }
+        }
+        return occ;
+    }
+
+    /*
+    12. Find the second largest element.
+    13. Find the second smallest element.
+    */
+
+    void sec_max_min(int arr[],int size)
+    {
+        int first_min = INT_MAX;
+        int sec_min = INT_MAX;
+        int first_max = INT_MIN;
+        int sec_max = INT_MIN;
+        for(int i=0;i<size;i++)
+        {
+            if(arr[i]>first_max)
+            {
+                sec_max = first_max;
+                first_max = arr[i];
+            }
+            else if(arr[i]>sec_max)
+            {
+                sec_max = arr[i];
+            }
+
+            if(arr[i]<first_min)
+            {
+                sec_min = first_min;
+                first_min = arr[i];
+            }
+            else if(arr[i]<sec_min)
+            {
+                sec_min = arr[i];
+            }
+        }
+
+        cout<<"first_max:"<<first_max<<endl;
+        cout<<"sec_max:"<<sec_max<<endl;
+        cout<<"first_min:"<<first_min<<endl;
+        cout<<"sec_min:"<<sec_min<<endl;
+    }
+
 
 };
 
@@ -177,6 +232,11 @@ int main()
     cout<<endl;
     int arr1[] = {1,2,3,4,5};
     ptr->reverse_2(arr1,size(arr1));
+
+    cout<<endl;
+    cout<<"Total No. of occurence:"<<ptr->occurence(arr,size(arr),2)<<endl;
+
+    ptr->sec_max_min(arr,size(arr));
 
 
 
