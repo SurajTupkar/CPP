@@ -204,6 +204,66 @@ class question
         cout<<"sec_min:"<<sec_min<<endl;
     }
 
+    /*
+    14. Check whether the array is sorted in ascending order.
+    15. Check whether the array is sorted in descending order.
+    */
+
+    bool asc(int arr[],int size)
+    {
+        for(int i=0;i<size;i++)
+        {
+            if(arr[i]<arr[i]+1)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    bool desc(int arr[],int size)
+    {
+        for(int i=0;i<size;i++)
+        {
+            if(arr[i]>arr[i]+1)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    
+    // 16. Copy one array into another.
+
+    void copy_one_another(int arr1[], int arr2[],int size )
+    {
+        for(int i=0;i<size;i++)
+        {
+            arr2[i] = arr1[i];
+        }
+
+        for(int i=0;i<size;i++)
+        {
+            cout<<arr2[i]<<" ";
+        }
+    }
+
+    // 17. swap alternate
+
+    void swap_alternate(int arr[],int size)
+    {
+        for(int i=0;i<size-1;i+=2)
+        {
+            swap(arr[i],arr[i+1]);
+        }
+
+        for(int i=0;i<size;i++)
+        {
+            cout<<arr[i]<<" ";
+        }
+    }
+
 
 };
 
@@ -237,6 +297,35 @@ int main()
     cout<<"Total No. of occurence:"<<ptr->occurence(arr,size(arr),2)<<endl;
 
     ptr->sec_max_min(arr,size(arr));
+
+    int arr3[] = {1,2,3,4,5};
+    if(ptr->asc(arr3,size(arr3)))
+    {
+        cout<<"Array is sorted in descending order"<<endl;
+    }
+
+    int arr4[] = {0,6,5,4,3,2};
+    if(ptr->desc(arr4,size(arr4)))
+    {
+        cout<<"Sorted in descending order"<<endl;
+    }
+
+    int arr5[] = {1,2,3,4,5};
+    int arr6[]={0};
+    cout<<"After Copied:"<<endl;
+    ptr->copy_one_another(arr5,arr6,size(arr5));
+
+    cout<<endl;
+    cout<<"Before Swap Alternate:"<<endl;
+    for(int i=0;i<size(arr6);i++)
+    {
+        cout<<arr6[i]<<" ";
+    }
+    cout<<endl;
+    int arr7[] = {1,2,3,4,5};
+     cout<<"After Swap Alternate:"<<endl;
+    ptr->swap_alternate(arr7,size(arr7));
+
 
 
 
