@@ -20,6 +20,9 @@ int main()
     v.push_back(40);
 
     cout<<"size of vector:"<<v.size()<<endl;
+    cout<<"capacity of vector:"<<v.capacity()<<endl;
+    v.push_back(50);
+    cout<<"capacity of vector:"<<v.capacity()<<endl;
 
 
 
