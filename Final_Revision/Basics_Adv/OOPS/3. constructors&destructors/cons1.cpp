@@ -9,6 +9,7 @@ constructor :
         4) Used mainly to initialize the object's data members
         5) Can be overloaded
         6) Cannot be static
+        7) constructor can not be virtual
 
     Types
         1) Default constructor
