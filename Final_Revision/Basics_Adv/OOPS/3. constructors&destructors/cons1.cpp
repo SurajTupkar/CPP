@@ -7,7 +7,7 @@ constructor :
             -> constructor can be called without any arguments
 
         2) Parameterised constructor
-            -> constructor cab be called with arguments
+            -> A constructor that accepts parameters to initialize an object.
 
         3) copy constructor
             -> creates a new object by copying an existing object
