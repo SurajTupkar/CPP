@@ -27,7 +27,29 @@ Access specifiers
                 -> private DM & MF only accessible within the class
             3. protected
                 -> protected DM & MF accessible within the class and it's derived class.
+      
                 
+Encapsulation 
+    -> OOPS mechanism 
+        -> where we can  Wrap data members and member functions into a single unit 
+        -> that single unit we called class
+    -> We can achieve data hiding by restricting direct access to data using access specifiers like public,private and protected.
+
+Constructors 
+    -> Constructor is a special member function of class that will automatically called when an object is created.
+    -> It's mainly used to initialise an data memebrs of object.
+
+    Types :
+        1) Default Constructors
+            -> Constructor will be called without any argument.
+        2) Parameterised Constructor
+            -> Constructor will be called with argument to initialise an object's data memebers.
+        3) Copy Construtor
+            -> Copy constructor is used to create an new object from existing one means 
+            -> We are doing copy of one object to another.
+        
+        4) Copy Assignment
+            -> Copy assignment means we can copy one object to other when have already created object
 */
 
 
@@ -49,6 +71,27 @@ class vehicle
         cout<<"Start vehicle"<<endl;
     }
 
+    // constructor
+    // Default Constructor
+    vehicle()
+    {
+        cout<<"default constructor callled"<<endl;
+    }
+
+    // Parameterised constructor
+    vehicle(string veh_name)
+    {
+        this->veh_name=veh_name;
+        cout<<"veh_name:"<<this->veh_name<<endl;
+    }
+
+    // copy constructor
+    vehicle(const vehicle& obj)
+    {
+        this->veh_name = obj.veh_name;
+        cout<<"veh_name through copy constructor: "<<this->veh_name<<endl;
+    }
+
     private:
 
 
@@ -60,8 +103,16 @@ int main()
     vehicle obj; // statically
     obj.start();
 
-    vehicle* obj1 = new vehicle(); // dynamically
+    vehicle* obj1 = new vehicle("XUV"); // dynamically
     obj1->start();
+
+    vehicle obj3("seltos");
+    vehicle obj2(obj3);
+    //cout<<obj2.veh_name<<endl;
+
+    obj3 = obj2; // copy assignment operator
+    obj3.start(); 
+
 
 
 
