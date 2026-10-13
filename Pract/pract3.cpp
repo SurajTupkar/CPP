@@ -31,6 +31,23 @@ Access specifiers
                 -> private DM & MF accessible within the class only.
             -> 3. protected
                 -> protected DM & MF accessible within the class and it's derived class.
+
+Constructor
+    -> special memeber function of class that will be called automatically when an object is created.
+        -> Types of constructor
+            -> 1. Default
+                -> Constructor with no argument
+            -> 2. Parameterised
+                -> Constructor with taking argument in input
+            -> 3. Copy
+                -> we can copy object from one to another
+    Characterstics
+        -> 1. Same name as a class name
+        -> 2. No return type even void also
+        -> 3. can be overload
+        -> 4. can not be virtual
+        -> 5. can not be static
+        -> 6. can not be virtual
 */
 
 // class 
@@ -47,7 +64,30 @@ class vehicle
         cout<<"start method of vehicle"<<endl;
     }
 
-    
+    public:
+    // constructor
+    vehicle()
+    {
+        cout<<"Default Constructor called"<<endl;
+    }
+
+    vehicle(string veh_name)
+    {
+        this->veh_name = veh_name;
+        cout<<"Parameterised constructor called"<<endl;
+        cout<<"veh_name under constructor:"<<this->veh_name<<endl;
+    }
+
+    vehicle(const vehicle& obj)
+    {
+        cout<<"Copy Constructor called"<<endl;
+        this->veh_name = obj.veh_name;
+    }
+
+    ~vehicle()
+    {
+        cout<<"Destructor called"<<endl;
+    }
 
 };
 
@@ -59,15 +99,18 @@ int main()
     obj.veh_name = "NEXON";
     
     // 2. dynamically
-    vehicle* ptr = new vehicle();
+    vehicle* ptr = new vehicle("XUV");
     ptr->veh_name = "SIERA";
     cout<<ptr->veh_name<<endl;
 
+    vehicle obj2;
+    obj2.veh_name = "SELTOS";
+    vehicle obj3(obj2);
+    cout<<obj3.veh_name<<endl;
 
 
-
-
-
+    delete ptr;
+    ptr = nullptr;
 
     return 0;
 }
