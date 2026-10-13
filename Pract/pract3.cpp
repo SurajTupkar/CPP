@@ -33,10 +33,38 @@ Access specifiers
                 -> protected DM & MF accessible within the class and it's derived class.
 */
 
+// class 
+
+// Encapsulation
+class vehicle
+{
+    public: // access specifiers
+    string veh_name; // DM
+
+    private:
+    void start()  // MF
+    {
+        cout<<"start method of vehicle"<<endl;
+    }
+
+    
+
+};
 
 int main()
 {
+    // object
+    // 1. statically
+    vehicle obj;
+    obj.veh_name = "NEXON";
     
+    // 2. dynamically
+    vehicle* ptr = new vehicle();
+    ptr->veh_name = "SIERA";
+    cout<<ptr->veh_name<<endl;
+
+
+
 
 
 
