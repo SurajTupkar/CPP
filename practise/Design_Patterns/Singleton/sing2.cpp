@@ -27,10 +27,13 @@ class singleton
     static mutex mtx;
     static singleton* getInstance()
     {
-        lock_guard<mutex> lock(mtx);
         if(instance == nullptr)
         {
-            instance = new singleton();
+            lock_guard<mutex> lock(mtx);
+            if(instance == nullptr)
+            {
+                instance = new singleton();
+            }
         }
 
         return instance;
@@ -39,6 +42,7 @@ class singleton
     static void deleteinstance()
     {
         delete instance;
+        instance = nullptr;
     }
 
     ~singleton()
@@ -61,8 +65,8 @@ void task(int thread_no)
 int main()
 {
     thread t1(task,1);
-    t1.join();
     thread t2(task,2);
+    t1.join();
     t2.join();
 
     singleton::deleteinstance();
