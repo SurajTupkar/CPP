@@ -1,5 +1,6 @@
 #include "iostream"
 #include "vector"
+#include "algorithm"
 using namespace std;
 
 /*
@@ -10,6 +11,18 @@ vector practise
         -> 2. vector with size
         -> 3. vector with size and element
         -> 4. vector with elements
+
+// Member functions
+    -> 1. push_back()
+    -> 2. begin()
+    -> 3. end()
+    -> 4. pop_back()
+    -> 5. size()
+    -> 6. capacity()
+    -> 7. empty()
+    -> 8. front()
+    -> 9. back()
+
 */
 
 
@@ -96,5 +109,41 @@ int main()
     // 4. pop_back() -> remove/pop element from the back
     v5.pop_back();
     cout<<"after pop_back, end()-1:"<<*(v5.end()-1)<<endl;
+
+    // 5. empty() -> check vector is empty or not means it will check it's size if 0 or not
+    //  if size of vector is 0 means it's an empty vector
+    
+    cout<<"v5.empty():"<<v5.empty()<<endl;
+    
+    vector<int> v6;
+    cout<<"v6.empty():"<<v6.empty()<<endl;
+    if(v6.empty())
+    {
+        v6.push_back(10);
+    }
+    else
+    {
+
+    }
+
+    cout<<"v6.begin():"<<*(v6.begin())<<endl;
+
+
+    // 6. front() -> fetch first element of vector
+    vector<int> v7 = {1,2,3,4};
+    cout<<"front of v7:"<<v7.front()<<endl; //1
+
+    // 7. back() -> last element of vector
+    cout<<"back of v7:"<<v7.back()<<endl; // 4
+
+    vector<int> v8 = {1,6,2,4};
+    sort(v8.begin(),v8.end());
+    for(int i=0;i<v8.size();i++)
+    {
+        cout<<v8[i]<<" ";
+    }
+
+   
     return 0;
+    
 }
