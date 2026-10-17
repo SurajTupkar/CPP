@@ -60,7 +60,7 @@ int main()
     }
 
     cout<<endl;
-    // Methods :
+    // Member Function :
 
     // 1. begin() -> first element of the vector
     
@@ -87,13 +87,6 @@ int main()
     // 5. size() : no.of elements present in the vector
     cout<<"v.size():"<<v.size()<<endl; 
 
-    
-
-
-
-
-
-
-
+    // 6.
     return 0;
 }
