@@ -17,6 +17,11 @@ class vehicle
         cout<<"Default constructor called"<<endl;
     }
 
+    vehicle(int val) : value(val)
+    {
+        cout<<"parameterised constructor called"<<endl;
+    }
+
     vehicle(const vehicle& cpyctor)
     {
         cout<<"copy constructor called"<<endl;
@@ -39,7 +44,7 @@ int main()
 {
     //vehicle obj; // default , destructor
     vector<vehicle>v;
-    v.push_back(vehicle()); // push_back -> object copy into the vector and same with emplace_back
+    v.push_back(10); // push_back -> object copy into the vector and same with emplace_back
     /*
     1.
     till here 
@@ -77,6 +82,24 @@ int main()
     -> if we does not have already object is present
     -> and we have assign at the time of push_back then that time move constructor will called instead of copy constructor
     -> and two destructor called    
+    */
+
+    /*
+    5.
+    -> push_back scenario
+    -> if i have created parameterised constructor
+    -> and i have pass vehicle(10) like this then 
+    -> parameterised constructor called
+    -> move constructor called
+    -> destructor called
+    -> destructor called
+
+    emplace_back scenario
+    -> if i have created parameterised constructor
+    -> and i have pass directly into the emplace_back(10) like this
+    -> then only 
+    -> parameterised constructor called
+    -> destructor called
     */
 
 
