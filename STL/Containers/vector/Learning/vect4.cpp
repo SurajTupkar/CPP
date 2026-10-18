@@ -17,6 +17,11 @@ class vehicle
         cout<<"Default constructor called"<<endl;
     }
 
+    vehicle(const vehicle& cpyctor)
+    {
+        cout<<"copy constructor called"<<endl;
+    }
+
     ~vehicle()
     {
         cout<<"Destructor called"<<endl;
@@ -37,6 +42,17 @@ int main()
     destructor called
     Note : two times destructor called because first destructor for object we have created
     second one is for the object present in the vector
+    */
+
+    /*
+    when i create copy constructor 
+    so result will be 
+        -> default constructor -> for object we have created
+        -> copy constructor -> for object we are copying to the vector
+        -> then two destructor for both constructor
+
+    NOTE : Same for push_back and emplace_back
+    
     */
 
 
