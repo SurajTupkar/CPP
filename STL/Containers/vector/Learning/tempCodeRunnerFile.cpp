@@ -1,1 +1,2 @@
-0;i<5;
+ vector<vehicle>v;
+    v.push_back(vehicle);

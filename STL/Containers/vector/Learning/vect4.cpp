@@ -22,6 +22,11 @@ class vehicle
         cout<<"copy constructor called"<<endl;
     }
 
+    vehicle(vehicle&& movectror)
+    {
+        cout<<"move constructor called"<<endl;
+    }
+
     ~vehicle()
     {
         cout<<"Destructor called"<<endl;
@@ -32,10 +37,11 @@ class vehicle
 
 int main()
 {
-    vehicle obj; // default , destructor
+    //vehicle obj; // default , destructor
     vector<vehicle>v;
-    v.push_back(obj); // push_back -> object copy into the vector and same with emplace_back
+    v.push_back(vehicle()); // push_back -> object copy into the vector and same with emplace_back
     /*
+    1.
     till here 
     default constructor called
     destructor called
@@ -45,6 +51,7 @@ int main()
     */
 
     /*
+    2.
     when i create copy constructor 
     so result will be 
         -> default constructor -> for object we have created
@@ -53,6 +60,23 @@ int main()
 
     NOTE : Same for push_back and emplace_back
     
+    */
+
+    /*
+    3.
+    If i create move constructor still 
+    default 
+    copy 
+    destructor 
+    destructor 
+    this order comes when we have already created object
+    */
+
+    /*
+    4.
+    -> if we does not have already object is present
+    -> and we have assign at the time of push_back then that time move constructor will called instead of copy constructor
+    -> and two destructor called    
     */
 
 
