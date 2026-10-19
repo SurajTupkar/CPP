@@ -186,6 +186,12 @@ int main()
     cout<<sum<<endl;
 
 
+    // 8. count
+    vector<int> v12 = {1,2,2,2,2,4};
+    int c = count(v12.begin(),v12.end(),2);
+    cout<<c<<endl;
+
+
 
     return 0;
 }
