@@ -1,6 +1,7 @@
 #include "iostream"
 #include "algorithm"
 #include "vector"
+#include <numeric>
 using namespace std;
 
 /*
@@ -164,6 +165,27 @@ int main()
     {
         cout<<"not present"<<endl;
     }
+
+    // 4. min_element()
+
+    vector<int> v11 = {1,2,3,4,5,6};
+    auto y = min_element(v11.begin(),v11.end());
+    cout<<*y<<endl;
+
+    // 5. max_element()
+    auto z = max_element(v11.begin(),v11.end());
+    cout<<*z<<endl;
+
+    // 6. binary_search()
+
+    bool m = binary_search(v11.begin(),v11.end(),2);
+    cout<<m<<endl;
+
+    // 7. accumulate
+    auto sum = accumulate(v11.begin(),v11.end(),0);
+    cout<<sum<<endl;
+
+
 
     return 0;
 }
