@@ -15,8 +15,20 @@ TOPICS :
         Example :
             int* ptr; -> This is wild pointer because it does not pointing to any valid object.
 
+            -> Question : Why pointer should not be wild or uninitialised ?
+                -> Dereferencing it can cause undefined behavior, 
+                    including crashes or invalid memory access.
+                -> To avoid this, we should initialize pointers with a valid object address or nullptr.
+
         -> 2. Null pointer
-            -> 
+            -> means our pointer does not pointing to any valid object,
+            -> so instead of uninitialising the pointer we can initialise with nullpointer so it can not gives us undefined pointer.
+
+            Example :
+
+            int* ptr = nullptr;
+
+            
 
 Pointers :
     -> pointer is an variable which stores the address of another variable.
@@ -63,6 +75,35 @@ int main()
     cout<<"value of ptr2:"<<*ptr2<<endl;
     cout<<"value of ptr1:"<<*ptr1<<endl;
 
+    // wild or uninitialised pointer
+    int* ptr3;
+    cout<<*ptr3<<endl;
+
+    if(ptr3==nullptr)
+    {
+        cout<<"ptr3 is an nullptr"<<endl;
+    }
+    else
+    {
+        cout<<"ptr3 is an nullptr"<<endl;
+    }
+    
+    // nullptr
+
+    // void pointer
+
+    /*
+    void pointer
+        -> pointer which can hold the address of any type of pointer
+        -> but we can not deference it directly we need to cast it to valid type of pointer
+            -> If we try to deference it will give "'void*' is not a pointer-to-object type"
+    */
+
+    int z = 10;
+    void* ptr4 = &z;
+    int* intptr = static_cast<int*>(ptr4);
+    cout<<*intptr<<endl;
+    
     
 
 
