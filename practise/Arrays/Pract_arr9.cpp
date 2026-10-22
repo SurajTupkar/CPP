@@ -49,14 +49,21 @@ class questions
     /*
     1. Find the largest element in an array.
     2. Find the smallest element in an array.
+    4. Calculate the sum of all elements.
+    5. Calculate the average of all elements.
+    6. Count the number of even and odd elements.
     */
 
     void min_max(int arr[],int size)
     {
         int max = INT_MIN;
         int min = INT_MAX;
+        float sum = 0;
+        int even = 0;
+        int odd = 0;
         for(int i=0;i<size;i++)
         {
+            sum+=arr[i];
             if(arr[i]>max)
             {
                 max = arr[i];
@@ -65,12 +72,44 @@ class questions
             {
                 min = arr[i];
             }
+            if(arr[i]%2==0)
+            {
+                even++;
+            }
+            else
+            {
+                odd++;
+            }
           
         } 
 
         cout<<"min:"<<min<<endl;
         cout<<"max:"<<max<<endl;
+        cout<<"sum:"<<sum<<endl;
+        cout<<"odd:"<<odd<<endl;
+        cout<<"even:"<<even<<endl;
+        cout<<"average:"<<sum/size<<endl;
         
+    }
+
+    /*
+    7. Search for a given element (Linear Search).
+    8. Find the index of a given element.
+    */
+
+    bool search(int arr[],int size,int key)
+    {
+        bool flag = false;
+        for(int i=0;i<size;i++)
+        {
+            if(arr[i]==key)
+            {
+                cout<<"key is found at index:"<<i<<endl;
+                flag = true;
+                break;
+            }
+        }
+        return flag;
     }
 };
 
@@ -79,6 +118,7 @@ int main()
     int arr[] = {1,2,-4,3,4,-8,5};
     questions* ptr = new questions();
     ptr->min_max(arr,size(arr));
+    cout<<ptr->search(arr,size(arr),4)<<endl;
 
     delete ptr;
     ptr = nullptr;
