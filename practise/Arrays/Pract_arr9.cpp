@@ -80,7 +80,6 @@ class questions
             {
                 odd++;
             }
-          
         } 
 
         cout<<"min:"<<min<<endl;
@@ -111,6 +110,43 @@ class questions
         }
         return flag;
     }
+
+    /*
+    9. Reverse an array.
+	-> using Swap
+		-> with while loop, Time Complexity : O(n)
+		-> with for loop,   Time complexity : O(n)
+    */
+
+    void reverse_1(int arr[],int size)
+    {
+        int start = 0;
+        int end = size - 1;
+        while(start<end)
+        {
+            swap(arr[start],arr[end]);
+            start++;
+            end--;
+        }
+
+        for(int i=0;i<size;i++)
+        {
+            cout<<arr[i]<<" ";
+        }
+    }
+
+    void reverse_2(int arr[],int size)
+    {
+        for(int i=0,j=size-1;i<j;i++,j--)
+        {
+            swap(arr[i],arr[j]);
+        }
+
+        for(int i=0;i<size;i++)
+        {
+            cout<<arr[i]<<" ";
+        }
+    }
 };
 
 int main()
@@ -119,6 +155,10 @@ int main()
     questions* ptr = new questions();
     ptr->min_max(arr,size(arr));
     cout<<ptr->search(arr,size(arr),4)<<endl;
+    ptr->reverse_1(arr,size(arr));
+    cout<<endl;
+    ptr->reverse_2(arr,size(arr));
+    
 
     delete ptr;
     ptr = nullptr;
