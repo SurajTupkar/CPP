@@ -203,6 +203,36 @@ class questions
         cout<<"first_max:"<<first_max<<endl;
         cout<<"sec_max:"<<sec_max<<endl;
     }
+
+    /*
+    14. Check whether the array is sorted in ascending order.
+    15. Check whether the array is sorted in descending order.
+    */
+
+    bool check_asc(int arr[],int size)
+    {
+        bool flag = false;
+        for(int i=0;i<size;i+=1)
+        {
+            if(arr[i]>arr[i+1])
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    bool check_dsc(int arr[], int size)
+    {
+        for(int i=0;i<size;i+=2)
+        {
+            if(arr[i]<arr[i+1])
+            {
+                return false;
+            }
+        }
+        return true;
+    }
 };
 
 int main()
@@ -217,6 +247,18 @@ int main()
     cout<<endl;
     cout<<"no.of occurence of given key:"<<ptr->count(arr,size(arr),4)<<endl;
     ptr->sec_min_max(arr,size(arr));
+
+    int arr1[] = {1,2,3,4,5};
+    if(ptr->check_asc(arr1,size(arr1)))
+    {
+        cout<<"sorted in ascending order"<<endl;
+    }
+
+    int arr2[] = {3,2,1};
+    if(ptr->check_dsc(arr2,size(arr2)))
+    {
+        cout<<"sorted in descending order"<<endl;
+    }
     
 
     delete ptr;
