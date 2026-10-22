@@ -147,17 +147,60 @@ class questions
             cout<<arr[i]<<" ";
         }
     }
+    //11. Count the occurrences of a given element.
+
+    
+    int count(int arr[],int size,int key)
+    {
+        int occ = 0;
+        for(int i=0;i<size;i++)
+        {
+            if(arr[i]==key)
+            {
+                occ++;
+            }
+        }
+        return occ;
+    }
+    /*
+    
+    12. Find the second largest element.
+    13. Find the second smallest element.
+    */
+
+    void sec_min_max(int arr[],int size)
+    {
+        int first_min = INT_MAX;
+        int sec_min = INT_MAX;
+        for(int i=0;i<size;i++)
+        {
+            if(arr[i]<first_min)
+            {
+                sec_min = first_min;
+                first_min = arr[i];
+            }
+            else if (arr[i]<sec_min)
+            {
+                sec_min = arr[i];
+            }
+        }
+        cout<<"first_min:"<<first_min<<endl;
+        cout<<"sec_min:"<<sec_min<<endl;
+    }
 };
 
 int main()
 {
-    int arr[] = {1,2,-4,3,4,-8,5};
+    int arr[] = {1,2,-4,3,4,-8,4,5};
     questions* ptr = new questions();
     ptr->min_max(arr,size(arr));
     cout<<ptr->search(arr,size(arr),4)<<endl;
     ptr->reverse_1(arr,size(arr));
     cout<<endl;
     ptr->reverse_2(arr,size(arr));
+    cout<<endl;
+    cout<<"no.of occurence of given key:"<<ptr->count(arr,size(arr),4)<<endl;
+    ptr->sec_min_max(arr,size(arr));
     
 
     delete ptr;
