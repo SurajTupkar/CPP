@@ -121,6 +121,27 @@ int main()
         cout<<v3[i]<<" ";
     }cout<<endl;
 
+    // 13. resize()
+
+    cout<<"size of vector 3 now :"<<v3.size()<<endl;
+    cout<<"capacity of vector 3 before resize : "<<v3.capacity()<<endl; 
+    v3.resize(18);
+    cout<<"resize of vector 3 from size 6 to 10 -> "<<v3.size()<<endl; // 18
+    cout<<"capacity of vector 3 after resize(10):"<<v3.capacity()<<endl; // 18
+
+    // 14. shrink_to_fit
+    vector<int>v4 = {1,2,3,4};
+    cout<<"size of vector v4:"<<v4.size()<<endl; //4
+    cout<<"capacity of vector v4:"<<v4.capacity()<<endl; //4
+    v4.push_back(10);
+    cout<<"size of vector v4:"<<v4.size()<<endl;
+    cout<<"capacity of vector v4:"<<v4.capacity()<<endl; // 8
+    v4.shrink_to_fit();
+    cout<<"Capacity of vector v4:"<<v4.capacity()<<endl; // 5
+    v3.shrink_to_fit();
+    cout<<"capacity of v3 after shrink_to_fit:"<<v3.size()<<endl;
+    
+
 
 
     return 0;
