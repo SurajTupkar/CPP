@@ -10,6 +10,14 @@ int main()
     cout<<"toatlRows:"<<totalRows<<endl;
     cout<<"totalcolumn:"<<totalcolumn<<endl;
 
+    vector<vector<int>> brr;
+    brr.push_back(vector<int>(4));
+    brr.push_back(vector<int>(2));
+    brr.push_back(vector<int>(5));
+
+    cout<<"No.of.rows:"<<brr.size()<<endl; // 3
+    cout<<"No.of.columns:"<<brr[0].size()<<endl; // 4
+
 
 
     return 0;
