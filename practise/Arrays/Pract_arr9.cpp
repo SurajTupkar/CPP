@@ -247,6 +247,102 @@ class questions
             cout<<arr[i]<<" ";
         }
     }
+
+    // 18. find unique element (Non-Repeating)
+
+    // limitation for doing 0 -> 3 same elements
+    // and for doing xor needs even duplicate number 
+    void unique(int arr[], int size)
+    {
+        for(int i=0;i<size;i++)
+        {
+            for(int j=i+1;j<size;j++)
+            {
+                if(arr[i]==arr[j])
+                {
+                    arr[i] = 0;
+                    arr[j] = 0;
+                }
+            }
+        }
+        for(int i=0;i<size;i++)
+        {
+            if(arr[i]>0)
+            {
+                cout<<arr[i]<<" ";
+            }
+        }
+    }
+
+    int unique_xor(int arr[],int size)
+    {
+        int ans = 0;
+        for(int i=0;i<size;i++)
+        {
+            ans = ans^arr[i];
+        }
+        return ans;
+    }
+
+    // 19. find duplicate element
+    void find_dup(int arr[],int size)
+    {
+        for(int i=0;i<size;i++)
+        {
+            for(int j=i+1;j<size;j++)
+            {
+                if(arr[i]==arr[j])
+                {
+                    cout<<"Duplicate:"<<arr[i]<<endl;
+                }
+            }
+        }
+
+       // cout<<"Duplicate:"<<ans<<endl;
+    }
+
+    // Missing Element
+    void missing(int arr[],int size)
+    {
+        int ans = 0;
+        for(int i=0;i<size;i++)
+        {
+            ans = ans^arr[i];
+        }
+
+        for(int i=0;i<=size+1;i++)
+        {
+            ans = ans^i;
+        }
+        cout<<"Missing Element:"<<ans<<endl;
+    }
+
+    // sort 0's and 1's
+
+    void sort_0_1(int arr[],int size)
+    {
+        int start = 0;
+        int end = size-1;
+        while(start<end)
+        {
+            if(arr[start]==0)
+            {
+                start++;
+            }
+            else if(arr[end]==1)
+            {
+                end--;
+            }
+            else
+            {
+                swap(arr[start],arr[end]);
+            }
+        }
+        for(int i=0;i<size;i++)
+        {
+            cout<<arr[i]<<" ";
+        }
+    }
 };
 
 int main()
@@ -275,6 +371,22 @@ int main()
     }
 
     ptr->swap_alt(arr1,size(arr1));
+    cout<<endl;
+    int arr3[] = {1,2,2,1,3};
+    ptr->unique(arr3,size(arr3));
+    cout<<endl;
+    cout<<ptr->unique_xor(arr3,size(arr3));
+    cout<<endl;
+
+    int arr4[] = {1,1,2,3,2};
+    ptr->find_dup(arr4,size(arr4));
+
+    int arr5[] = {1,2,3,4,6};
+    ptr->missing(arr5,size(arr5));
+
+    int arr6[] = {0,1,1,0,1};
+    ptr->sort_0_1(arr6,size(arr6));
+  
     
 
     delete ptr;
