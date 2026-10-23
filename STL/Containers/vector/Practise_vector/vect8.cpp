@@ -88,9 +88,57 @@ int main()
     cout<<"check vector is empty or not:"<<v3.empty()<<endl; // 0
 
     // 11. insert element at index insert(index,element)
-    v3.insert(v.begin()+1,7);
-    cout<<"size of vector after insert 7 at index 2:"<<v3.size()<<endl; // 6
-    cout<<"size of vector after inserting 7 at index 2:"<<v3.capacity()<<endl; //8
+    v3.insert(v3.begin()+1,7);
+    cout<<"size of vector after insert 7 at index 1:"<<v3.size()<<endl; // 6
+    cout<<"size of vector after inserting 7 at index 1:"<<v3.capacity()<<endl; //8
+    cout<<"element after inserting at index 1:"<<v3.at(1)<<endl; // 7
+
+    // 12. pop_back() -> remove element from back
+    v3.pop_back();
+    cout<<"size of vector after pop_back:"<<v3.size()<<endl; // 5
+    cout<<"Capacity of vector after pop_back:"<<v3.capacity()<<endl; // 8
+    cout<<"last element present at vector v3:"<<v3.back()<<endl; 
+
+    // 13. erase() -> remove element from perticular position/index
+    for(int i=0;i<v3.size();i++)
+    {
+        cout<<v3[i]<<" ";
+    }cout<<endl;
+    v3.erase(v3.begin()+2); 
+    for(int i=0;i<v3.size();i++)
+    {
+        cout<<v3[i]<<" "; // 1 7 3 4
+    }cout<<endl;
+
+    // vector tranversal and iterators
+
+    vector<int>v4 = {1,2,3,4,5,6};
+    // 1. for loop
+    for(int i=0;i<v4.size();i++)
+    {
+        cout<<v4[i]<<" ";
+    }cout<<endl;
+
+    // 2. range based for loop
+    for(auto i:v4)
+    {
+        cout<<i<<" ";
+    }cout<<endl;
+
+    // 3. iterators
+
+    cout<<"iterators:"<<endl;
+    for(auto i=v4.begin(); i!=v4.end(); i++)
+    {
+        cout<<*i<<" ";
+    }cout<<endl;
+
+    cout<<"Reverse Iterators"<<endl;
+    for(auto it=v4.rbegin();it!=v4.rend();it++)
+    {
+        cout<<*it<<" ";
+    }cout<<endl;
+
 
 
 
