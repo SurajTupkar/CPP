@@ -10,6 +10,7 @@ int main()
     cout<<"toatlRows:"<<totalRows<<endl;
     cout<<"totalcolumn:"<<totalcolumn<<endl;
 
+    // Jagged or Ragged Array
     vector<vector<int>> brr;
     brr.push_back(vector<int>(4));
     brr.push_back(vector<int>(2));
