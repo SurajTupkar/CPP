@@ -87,6 +87,24 @@ int main()
     // 5. size() : no.of elements present in the vector
     cout<<"v.size():"<<v.size()<<endl; 
 
-    // 6.
+    // 6. [] -> to use this square bracket for acccesing elements a vector should have valid size or elements present in the vector
+    vector<int>v1;
+    // cout<<v1[1]<<endl; -> It gives an error because vector is empty
+    // v1[0] = 1; -> This will also gives an error because vector is empty
+    vector<int>v2(10);
+    v2[0] = 1;
+    cout<<v2.front()<<endl;
+
+
+    // Iterator
+
+    vector<int>v3 = {1,2,3,4,5};
+
+    vector<int>::iterator it = v3.begin();
+    for(it;it!=v3.end();it++)
+    {
+        cout<<*it<<" ";
+    }
+
     return 0;
 }
