@@ -48,5 +48,27 @@ int main()
         cout<<"table map is not empty"<<endl;
     }
 
+    // 5. at
+
+    cout<<"at en:"<<table.at("en")<<endl;
+
+    // 6. []
+
+    cout<<"[en]:"<<table["en"]<<endl;
+
+    
+
+    // 7.erase(iterator,iterator)
+    // 7.erase(iterator)
+    cout<<"size before doing erase:"<<table.size()<<endl;
+    table.erase(table.begin());
+    cout<<"size after doing erase:"<<table.size()<<endl;
+    
+    cout<<"size before doing erase:"<<table.size()<<endl;
+    table.erase(table.begin(),table.end()); // 2 
+    cout<<"size after doing erase:"<<table.size()<<endl;
+
+
+
     return 0;
 }
