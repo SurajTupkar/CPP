@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    // creation of map
+    // insertion in map
 
     // 1. using operator []
     unordered_map<string,string> table;
@@ -56,8 +56,22 @@ int main()
 
     cout<<"[en]:"<<table["en"]<<endl;
 
-    
+    // 8. find
+    if(table.find("in")!= table.end())
+    {
+        cout<<"key is found"<<endl;
+    }
+    else
+    {
+        cout<<"key is not found"<<endl;
+    }
 
+
+    // 9. count()
+    auto c = table.count("in");
+    cout<<"count:"<<c<<endl;
+   
+    
     // 7.erase(iterator,iterator)
     // 7.erase(iterator)
     cout<<"size before doing erase:"<<table.size()<<endl;

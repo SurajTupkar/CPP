@@ -17,12 +17,45 @@ Map :
             -> data stored in the sorted order
 
     Creation of Map
+        -> ways 
+            -> 1. empty map
+            -> 2. Using Initializer List
+            -> 3. Copying an Existing Map
 
 */
 
 
 int main()
 {
+
+    // 1. Creation of ways -> 3. ways
+    // way 1: empty map
+    map<int,string> a;
+
+    // way 2: using intialiser list
+    map<int,string> b = {
+        {1,"A"},
+        {2,"B"},
+        {4,"C"},
+        {3,"D"}
+    };
+
+    // accessing elements
+    for(const auto& i : b)
+    {
+        cout<<i.first<<" "<<i.second<<endl;
+    }
+
+    // way 3: Copying an Existing Map
+
+    map<int,string> c = b;
+
+    for(const auto& y : c)
+    {
+        cout<<y.first<<" "<<y.second<<endl;
+    }
+
+
     // 1. Create : unordered_map
     unordered_map<string,string> table;
 
