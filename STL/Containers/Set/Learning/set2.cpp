@@ -50,6 +50,10 @@ int main()
     st.erase(st.begin());
     cout<<"After erasing first element of the set:"<<*(st.begin())<<endl;
 
+    cout<<"size of set before erase(2)"<<st.size()<<endl;
+    st.erase(2);
+    cout<<"size of set after erase(2)"<<st.size()<<endl;
+
     // 9. count() -> No.of the occurence of the given element present in the set
 
     cout<< st.count(3)<<endl; 
@@ -61,6 +65,12 @@ int main()
     {
         cout<<"Not Found"<<endl;
     }
+
+    // 10. clear() -> Remove all elements from the set
+
+    st.clear();
+    cout<<"size of set st after clear:"<<st.size()<<endl;
+
 
 
     return 0;
