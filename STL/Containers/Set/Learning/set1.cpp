@@ -26,6 +26,7 @@ int main()
     st.insert(8);
     st.insert(4);
 
+
     // traverse
     set<int>::iterator it = st.begin();
 
@@ -35,6 +36,8 @@ int main()
         cout<<*it<<" ";
         it++;
     }cout<<endl;
+
+
 
     // creation unordered_set
 
