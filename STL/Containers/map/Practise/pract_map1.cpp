@@ -51,8 +51,23 @@ int main()
     cout<<it3->first<<endl;
     cout<<it3->second<<endl;
 
-    
+    // [] vs at()
 
+    cout<<emp[3]<<endl; // vinayak    // access value present at key 
+    cout<<emp.at(2)<<endl; // nishank // access value present at key
+
+    cout<<"size of emp before emp.[4]:"<<emp.size()<<endl; // 3
+    emp[4]; // if key is not present it will insert the key with default value (space) or intialised value
+    cout<<"size of emp after emp.[4]:"<<emp.size()<<endl; // 3
+ 
+    it3++;
+    cout<<it3->first<<endl; // 4
+    cout<<it3->second<<endl; // 
+
+    cout<<emp.at(4)<<endl; // space 
+
+    emp[2] = "shashank"; // update value present at key 2
+    cout<<emp.at(2)<<endl; // shashank instead of nishank
 
 
     return 0;
