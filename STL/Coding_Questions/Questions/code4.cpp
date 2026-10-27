@@ -30,13 +30,19 @@ int main()
     */
 
     //  To maintain the original order
+    bool flag = false;
     for(auto it : v)
     {
         if(freq[it]==1)
         {
             cout<<it<<endl;
+            flag = true;
             break;
         }
+    }
+    if(!flag)
+    {
+        cout<<"-1"<<endl;
     }
     
 
