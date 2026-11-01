@@ -23,7 +23,7 @@ using namespace std;
 
 /*
 Internal padding 
--> class vehicle1 is an example of internal padding
+-> class vehicle is an example of internal padding
     -> char b 
         -> 1 byte
         -> 3 byte padding i.e Internal Padding
@@ -40,13 +40,35 @@ class vehicle
 
 };
 
+/*
+Trailing Padding
+    -> int a 
+        -> 4 bytes
+    -> char b 
+        -> 1 byte
+            +
+        -> 3 bytes padding
+
+    -> Total size -> 8 Bytes
+
+*/
+class vehicle1
+{
+    int a;
+    char b;
+
+};
+
 
 int main()
 {
 
     vehicle obj;
     // size of obj = 8 without padding
-    cout<<sizeof(obj)<<endl; //8
+    cout<<"size of class in Internal Padding:"<<sizeof(obj)<<endl; //8
+
+    vehicle1 obj1;
+    cout<<"size of class in Trailing Padding:"<<sizeof(obj1)<<endl;
 
 
     return 0;
