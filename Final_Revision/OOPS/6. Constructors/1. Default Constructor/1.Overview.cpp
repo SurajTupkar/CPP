@@ -7,6 +7,11 @@ Constructor :
     -> Special member function of class that will call automatically at the of object creation
     -> It's mainly used to intialise the data members of objects
 
+Properties/Rules of Constructor
+    -> 1. It should have same name as class name
+    -> 2. It does not have return type even though void also
+    -> 3. Construtor will automatically called when an object is created or at the time of object creation
+
 Types :
 
     1. Default Constructor:
