@@ -15,7 +15,6 @@ class vehicle
         cout<<"speed:"<<this->speed<<endl;
     }
 
-
 };
 
 int main()
